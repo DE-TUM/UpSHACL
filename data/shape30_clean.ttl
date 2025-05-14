@@ -1,0 +1,4151 @@
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ss: <http://shaclshapes.org/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ss:AmphibianShape a sh:NodeShape ;
+    void:entities "162"^^xsd:int ;
+    sh:property ss:binomialAuthorityAmphibianShapeProperty,
+        ss:classAmphibianShapeProperty,
+        ss:conservationStatusAmphibianShapeProperty,
+        ss:conservationStatusSystemAmphibianShapeProperty,
+        ss:depictionAmphibianShapeProperty,
+        ss:familyAmphibianShapeProperty,
+        ss:genusAmphibianShapeProperty,
+        ss:instanceTypeAmphibianShapeProperty,
+        ss:kingdomAmphibianShapeProperty,
+        ss:labelAmphibianShapeProperty,
+        ss:nameAmphibianShapeProperty,
+        ss:orderAmphibianShapeProperty,
+        ss:phylumAmphibianShapeProperty,
+        ss:synonymAmphibianShapeProperty ;
+    sh:targetClass dbo:Amphibian .
+
+ss:ComicStripShape a sh:NodeShape ;
+    void:entities "254"^^xsd:int ;
+    sh:property ss:differentFromComicStripShapeProperty,
+        ss:instanceTypeComicStripShapeProperty,
+        ss:labelComicStripShapeProperty,
+        ss:nameComicStripShapeProperty,
+        ss:publisherComicStripShapeProperty,
+        ss:writerComicStripShapeProperty ;
+    sh:targetClass dbo:ComicStrip .
+
+ss:CongressmanShape a sh:NodeShape ;
+    void:entities "2503"^^xsd:int ;
+    sh:property ss:activeYearsEndDateCongressmanShapeProperty,
+        ss:activeYearsStartDateCongressmanShapeProperty,
+        ss:almaMaterCongressmanShapeProperty,
+        ss:appointerCongressmanShapeProperty,
+        ss:associateCongressmanShapeProperty,
+        ss:awardCongressmanShapeProperty,
+        ss:battleCongressmanShapeProperty,
+        ss:birthDateCongressmanShapeProperty,
+        ss:birthNameCongressmanShapeProperty,
+        ss:birthPlaceCongressmanShapeProperty,
+        ss:childCongressmanShapeProperty,
+        ss:committeeCongressmanShapeProperty,
+        ss:countryCongressmanShapeProperty,
+        ss:deathDateCongressmanShapeProperty,
+        ss:deathPlaceCongressmanShapeProperty,
+        ss:deputyCongressmanShapeProperty,
+        ss:differentFromCongressmanShapeProperty,
+        ss:electionMajorityCongressmanShapeProperty,
+        ss:governorCongressmanShapeProperty,
+        ss:homepageCongressmanShapeProperty,
+        ss:instanceTypeCongressmanShapeProperty,
+        ss:labelCongressmanShapeProperty,
+        ss:lieutenantCongressmanShapeProperty,
+        ss:militaryBranchCongressmanShapeProperty,
+        ss:militaryCommandCongressmanShapeProperty,
+        ss:militaryRankCongressmanShapeProperty,
+        ss:militaryUnitCongressmanShapeProperty,
+        ss:nameCongressmanShapeProperty,
+        ss:nationalityCongressmanShapeProperty,
+        ss:nickCongressmanShapeProperty,
+        ss:occupationCongressmanShapeProperty,
+        ss:officeCongressmanShapeProperty,
+        ss:orderInOfficeCongressmanShapeProperty,
+        ss:otherPartyCongressmanShapeProperty,
+        ss:partyCongressmanShapeProperty,
+        ss:presidentCongressmanShapeProperty,
+        ss:professionCongressmanShapeProperty,
+        ss:regionCongressmanShapeProperty,
+        ss:relationCongressmanShapeProperty,
+        ss:religionCongressmanShapeProperty,
+        ss:residenceCongressmanShapeProperty,
+        ss:restingPlaceCongressmanShapeProperty,
+        ss:sameAsCongressmanShapeProperty,
+        ss:seeAlsoCongressmanShapeProperty,
+        ss:serviceEndYearCongressmanShapeProperty,
+        ss:serviceStartYearCongressmanShapeProperty,
+        ss:spouseCongressmanShapeProperty,
+        ss:successorCongressmanShapeProperty ;
+    sh:targetClass dbo:Congressman .
+
+ss:ConiferShape a sh:NodeShape ;
+    void:entities "42"^^xsd:int ;
+    sh:property ss:binomialAuthorityConiferShapeProperty,
+        ss:classConiferShapeProperty,
+        ss:conservationStatusConiferShapeProperty,
+        ss:conservationStatusSystemConiferShapeProperty,
+        ss:depictionConiferShapeProperty,
+        ss:divisionConiferShapeProperty,
+        ss:familyConiferShapeProperty,
+        ss:genusConiferShapeProperty,
+        ss:instanceTypeConiferShapeProperty,
+        ss:kingdomConiferShapeProperty,
+        ss:labelConiferShapeProperty,
+        ss:nameConiferShapeProperty,
+        ss:orderConiferShapeProperty,
+        ss:speciesConiferShapeProperty,
+        ss:synonymConiferShapeProperty ;
+    sh:targetClass dbo:Conifer .
+
+ss:CricketTeamShape a sh:NodeShape ;
+    void:entities "814"^^xsd:int ;
+    sh:property ss:capacityCricketTeamShapeProperty,
+        ss:ceoCricketTeamShapeProperty,
+        ss:chairmanCricketTeamShapeProperty,
+        ss:cityCricketTeamShapeProperty,
+        ss:coachCricketTeamShapeProperty,
+        ss:differentFromCricketTeamShapeProperty,
+        ss:formationDateCricketTeamShapeProperty,
+        ss:groundCricketTeamShapeProperty,
+        ss:homepageCricketTeamShapeProperty,
+        ss:instanceTypeCricketTeamShapeProperty,
+        ss:labelCricketTeamShapeProperty,
+        ss:managerCricketTeamShapeProperty,
+        ss:nameCricketTeamShapeProperty,
+        ss:ownerCricketTeamShapeProperty,
+        ss:seeAlsoCricketTeamShapeProperty,
+        ss:titleCricketTeamShapeProperty ;
+    sh:targetClass dbo:CricketTeam .
+
+ss:DartsPlayerShape a sh:NodeShape ;
+    void:entities "668"^^xsd:int ;
+    sh:property ss:birthDateDartsPlayerShapeProperty,
+        ss:birthPlaceDartsPlayerShapeProperty,
+        ss:countryDartsPlayerShapeProperty,
+        ss:deathDateDartsPlayerShapeProperty,
+        ss:deathPlaceDartsPlayerShapeProperty,
+        ss:differentFromDartsPlayerShapeProperty,
+        ss:hometownDartsPlayerShapeProperty,
+        ss:instanceTypeDartsPlayerShapeProperty,
+        ss:labelDartsPlayerShapeProperty,
+        ss:nameDartsPlayerShapeProperty,
+        ss:seeAlsoDartsPlayerShapeProperty ;
+    sh:targetClass dbo:DartsPlayer .
+
+ss:FernShape a sh:NodeShape ;
+    void:entities "61"^^xsd:int ;
+    sh:property ss:binomialAuthorityFernShapeProperty,
+        ss:classFernShapeProperty,
+        ss:conservationStatusFernShapeProperty,
+        ss:conservationStatusSystemFernShapeProperty,
+        ss:divisionFernShapeProperty,
+        ss:familyFernShapeProperty,
+        ss:genusFernShapeProperty,
+        ss:instanceTypeFernShapeProperty,
+        ss:kingdomFernShapeProperty,
+        ss:labelFernShapeProperty,
+        ss:nameFernShapeProperty,
+        ss:orderFernShapeProperty,
+        ss:sameAsFernShapeProperty,
+        ss:speciesFernShapeProperty,
+        ss:synonymFernShapeProperty ;
+    sh:targetClass dbo:Fern .
+
+ss:FootballMatchShape a sh:NodeShape ;
+    void:entities "4234"^^xsd:int ;
+    sh:property ss:cityFootballMatchShapeProperty,
+        ss:dateFootballMatchShapeProperty,
+        ss:differentFromFootballMatchShapeProperty,
+        ss:eventFootballMatchShapeProperty,
+        ss:followingEventFootballMatchShapeProperty,
+        ss:imdbIdFootballMatchShapeProperty,
+        ss:instanceTypeFootballMatchShapeProperty,
+        ss:labelFootballMatchShapeProperty,
+        ss:locationFootballMatchShapeProperty,
+        ss:nameFootballMatchShapeProperty,
+        ss:numberOfGoalsFootballMatchShapeProperty,
+        ss:previousEventFootballMatchShapeProperty,
+        ss:sameAsFootballMatchShapeProperty,
+        ss:seeAlsoFootballMatchShapeProperty,
+        ss:teamFootballMatchShapeProperty,
+        ss:timeFootballMatchShapeProperty ;
+    sh:targetClass dbo:FootballMatch .
+
+ss:GolfLeagueShape a sh:NodeShape ;
+    void:entities "37"^^xsd:int ;
+    sh:property ss:ceoGolfLeagueShapeProperty,
+        ss:countryGolfLeagueShapeProperty,
+        ss:currentSeasonGolfLeagueShapeProperty,
+        ss:formationDateGolfLeagueShapeProperty,
+        ss:foundingYearGolfLeagueShapeProperty,
+        ss:homepageGolfLeagueShapeProperty,
+        ss:instanceTypeGolfLeagueShapeProperty,
+        ss:labelGolfLeagueShapeProperty,
+        ss:mottoGolfLeagueShapeProperty,
+        ss:participantGolfLeagueShapeProperty,
+        ss:seeAlsoGolfLeagueShapeProperty,
+        ss:titleGolfLeagueShapeProperty ;
+    sh:targetClass dbo:GolfLeague .
+
+ss:HockeyTeamShape a sh:NodeShape ;
+    void:entities "2431"^^xsd:int ;
+    sh:property ss:cityHockeyTeamShapeProperty,
+        ss:coachHockeyTeamShapeProperty,
+        ss:colourHockeyTeamShapeProperty,
+        ss:differentFromHockeyTeamShapeProperty,
+        ss:formationDateHockeyTeamShapeProperty,
+        ss:formationYearHockeyTeamShapeProperty,
+        ss:foundingYearHockeyTeamShapeProperty,
+        ss:generalManagerHockeyTeamShapeProperty,
+        ss:homepageHockeyTeamShapeProperty,
+        ss:instanceTypeHockeyTeamShapeProperty,
+        ss:labelHockeyTeamShapeProperty,
+        ss:leagueHockeyTeamShapeProperty,
+        ss:locationCityHockeyTeamShapeProperty,
+        ss:logoHockeyTeamShapeProperty,
+        ss:managerHockeyTeamShapeProperty,
+        ss:nameHockeyTeamShapeProperty,
+        ss:sameAsHockeyTeamShapeProperty,
+        ss:seeAlsoHockeyTeamShapeProperty,
+        ss:stadiumHockeyTeamShapeProperty ;
+    sh:targetClass dbo:HockeyTeam .
+
+ss:HospitalShape a sh:NodeShape ;
+    void:entities "4750"^^xsd:int ;
+    sh:property ss:addressHospitalShapeProperty,
+        ss:affiliationHospitalShapeProperty,
+        ss:alternativeNameHospitalShapeProperty,
+        ss:architectHospitalShapeProperty,
+        ss:architecturalStyleHospitalShapeProperty,
+        ss:areaHospitalShapeProperty,
+        ss:bedCountHospitalShapeProperty,
+        ss:buildingEndDateHospitalShapeProperty,
+        ss:buildingStartDateHospitalShapeProperty,
+        ss:cityHospitalShapeProperty,
+        ss:closingDateHospitalShapeProperty,
+        ss:closingYearHospitalShapeProperty,
+        ss:countryHospitalShapeProperty,
+        ss:differentFromHospitalShapeProperty,
+        ss:floorAreaHospitalShapeProperty,
+        ss:floorCountHospitalShapeProperty,
+        ss:homepageHospitalShapeProperty,
+        ss:instanceTypeHospitalShapeProperty,
+        ss:labelHospitalShapeProperty,
+        ss:locationHospitalShapeProperty,
+        ss:logoHospitalShapeProperty,
+        ss:nameHospitalShapeProperty,
+        ss:nrhpReferenceNumberHospitalShapeProperty,
+        ss:openingDateHospitalShapeProperty,
+        ss:openingYearHospitalShapeProperty,
+        ss:originalNameHospitalShapeProperty,
+        ss:ownerHospitalShapeProperty,
+        ss:regionHospitalShapeProperty,
+        ss:sameAsHospitalShapeProperty,
+        ss:seeAlsoHospitalShapeProperty,
+        ss:stateHospitalShapeProperty,
+        ss:statusHospitalShapeProperty,
+        ss:typeHospitalShapeProperty,
+        ss:yearOfConstructionHospitalShapeProperty ;
+    sh:targetClass dbo:Hospital .
+
+ss:MossShape a sh:NodeShape ;
+    void:entities "209"^^xsd:int ;
+    sh:property ss:binomialAuthorityMossShapeProperty,
+        ss:classMossShapeProperty,
+        ss:conservationStatusMossShapeProperty,
+        ss:conservationStatusSystemMossShapeProperty,
+        ss:depictionMossShapeProperty,
+        ss:divisionMossShapeProperty,
+        ss:familyMossShapeProperty,
+        ss:genusMossShapeProperty,
+        ss:instanceTypeMossShapeProperty,
+        ss:kingdomMossShapeProperty,
+        ss:labelMossShapeProperty,
+        ss:nameMossShapeProperty,
+        ss:orderMossShapeProperty,
+        ss:sameAsMossShapeProperty,
+        ss:synonymMossShapeProperty ;
+    sh:targetClass dbo:Moss .
+
+ss:NetballPlayerShape a sh:NodeShape ;
+    void:entities "428"^^xsd:int ;
+    sh:property ss:birthDateNetballPlayerShapeProperty,
+        ss:birthPlaceNetballPlayerShapeProperty,
+        ss:heightNetballPlayerShapeProperty,
+        ss:instanceTypeNetballPlayerShapeProperty,
+        ss:labelNetballPlayerShapeProperty,
+        ss:nameNetballPlayerShapeProperty,
+        ss:occupationNetballPlayerShapeProperty,
+        ss:positionNetballPlayerShapeProperty,
+        ss:relativeNetballPlayerShapeProperty,
+        ss:schoolNetballPlayerShapeProperty,
+        ss:spouseNetballPlayerShapeProperty,
+        ss:universityNetballPlayerShapeProperty ;
+    sh:targetClass dbo:NetballPlayer .
+
+ss:RacecourseShape a sh:NodeShape ;
+    void:entities "313"^^xsd:int ;
+    sh:property ss:differentFromRacecourseShapeProperty,
+        ss:homepageRacecourseShapeProperty,
+        ss:instanceTypeRacecourseShapeProperty,
+        ss:labelRacecourseShapeProperty,
+        ss:locationRacecourseShapeProperty,
+        ss:nameRacecourseShapeProperty,
+        ss:name_1RacecourseShapeProperty,
+        ss:ownerRacecourseShapeProperty,
+        ss:sameAsRacecourseShapeProperty,
+        ss:seeAlsoRacecourseShapeProperty ;
+    sh:targetClass dbo:Racecourse .
+
+ss:RadioHostShape a sh:NodeShape ;
+    void:entities "342"^^xsd:int ;
+    sh:property ss:birthDateRadioHostShapeProperty,
+        ss:birthNameRadioHostShapeProperty,
+        ss:birthPlaceRadioHostShapeProperty,
+        ss:countryRadioHostShapeProperty,
+        ss:deathDateRadioHostShapeProperty,
+        ss:deathPlaceRadioHostShapeProperty,
+        ss:differentFromRadioHostShapeProperty,
+        ss:homepageRadioHostShapeProperty,
+        ss:imdbIdRadioHostShapeProperty,
+        ss:instanceTypeRadioHostShapeProperty,
+        ss:labelRadioHostShapeProperty,
+        ss:nameRadioHostShapeProperty,
+        ss:sameAsRadioHostShapeProperty,
+        ss:seeAlsoRadioHostShapeProperty ;
+    sh:targetClass dbo:RadioHost .
+
+ss:RoadJunctionShape a sh:NodeShape ;
+    void:entities "252"^^xsd:int ;
+    sh:property ss:aliasRoadJunctionShapeProperty,
+        ss:countryRoadJunctionShapeProperty,
+        ss:differentFromRoadJunctionShapeProperty,
+        ss:heightRoadJunctionShapeProperty,
+        ss:instanceTypeRoadJunctionShapeProperty,
+        ss:labelRoadJunctionShapeProperty,
+        ss:locationRoadJunctionShapeProperty,
+        ss:maintainedByRoadJunctionShapeProperty,
+        ss:meetingRoadRoadJunctionShapeProperty,
+        ss:nameRoadJunctionShapeProperty,
+        ss:openingYearRoadJunctionShapeProperty,
+        ss:pictureRoadJunctionShapeProperty,
+        ss:seeAlsoRoadJunctionShapeProperty,
+        ss:typeRoadJunctionShapeProperty,
+        ss:yearOfConstructionRoadJunctionShapeProperty ;
+    sh:targetClass dbo:RoadJunction .
+
+ss:RoadShape a sh:NodeShape ;
+    void:entities "21235"^^xsd:int ;
+    sh:property ss:addressInRoadRoadShapeProperty,
+        ss:beltwayCityRoadShapeProperty,
+        ss:buildingEndDateRoadShapeProperty,
+        ss:buildingStartDateRoadShapeProperty,
+        ss:cityRoadShapeProperty,
+        ss:countryRoadShapeProperty,
+        ss:countyRoadShapeProperty,
+        ss:dateOfAbandonmentRoadShapeProperty,
+        ss:differentFromRoadShapeProperty,
+        ss:formerNameRoadShapeProperty,
+        ss:highwaySystemRoadShapeProperty,
+        ss:imdbIdRoadShapeProperty,
+        ss:instanceTypeRoadShapeProperty,
+        ss:isPartOfNameRoadShapeProperty,
+        ss:labelRoadShapeProperty,
+        ss:lengthReferenceRoadShapeProperty,
+        ss:lengthRoadShapeProperty,
+        ss:locationRoadShapeProperty,
+        ss:logoRoadShapeProperty,
+        ss:maintainedByRoadShapeProperty,
+        ss:mapRoadShapeProperty,
+        ss:nameRoadShapeProperty,
+        ss:openingDateRoadShapeProperty,
+        ss:pictureRoadShapeProperty,
+        ss:postalCodeRoadShapeProperty,
+        ss:previousInfrastructureRoadShapeProperty,
+        ss:routeEndDirectionRoadShapeProperty,
+        ss:routeEndRoadShapeProperty,
+        ss:routeJunctionRoadShapeProperty,
+        ss:routeNumberRoadShapeProperty,
+        ss:routeStartDirectionRoadShapeProperty,
+        ss:routeStartRoadShapeProperty,
+        ss:routeTypeAbbreviationRoadShapeProperty,
+        ss:ruralMunicipalityRoadShapeProperty,
+        ss:sameAsRoadShapeProperty,
+        ss:seeAlsoRoadShapeProperty,
+        ss:spurOfRoadShapeProperty,
+        ss:stateRoadShapeProperty,
+        ss:subsequentInfrastructureRoadShapeProperty,
+        ss:typeRoadShapeProperty ;
+    sh:targetClass dbo:Road .
+
+ss:SeaShape a sh:NodeShape ;
+    void:entities "95"^^xsd:int ;
+    sh:property ss:alternativeNameSeaShapeProperty,
+        ss:areaOfCatchmentSeaShapeProperty,
+        ss:areaTotalSeaShapeProperty,
+        ss:averageDepthSeaShapeProperty,
+        ss:countrySeaShapeProperty,
+        ss:elevationSeaShapeProperty,
+        ss:frozenSeaShapeProperty,
+        ss:inflowSeaShapeProperty,
+        ss:instanceTypeSeaShapeProperty,
+        ss:isPartOfSeaShapeProperty,
+        ss:islandSeaShapeProperty,
+        ss:labelSeaShapeProperty,
+        ss:lengthSeaShapeProperty,
+        ss:locationSeaShapeProperty,
+        ss:maximumDepthSeaShapeProperty,
+        ss:maximumTemperatureSeaShapeProperty,
+        ss:minimumTemperatureSeaShapeProperty,
+        ss:nameSeaShapeProperty,
+        ss:namedAfterSeaShapeProperty,
+        ss:nearestCitySeaShapeProperty,
+        ss:originalNameSeaShapeProperty,
+        ss:outflowSeaShapeProperty,
+        ss:quoteSeaShapeProperty,
+        ss:sameAsSeaShapeProperty,
+        ss:seeAlsoSeaShapeProperty,
+        ss:shoreLengthSeaShapeProperty,
+        ss:typeSeaShapeProperty,
+        ss:volumeSeaShapeProperty,
+        ss:widthSeaShapeProperty ;
+    sh:targetClass dbo:Sea .
+
+ss:ShipShape a sh:NodeShape ;
+    void:entities "15708"^^xsd:int ;
+    sh:property ss:acquirementDateShipShapeProperty,
+        ss:activeYearsEndDateShipShapeProperty,
+        ss:activeYearsStartDateShipShapeProperty,
+        ss:builderShipShapeProperty,
+        ss:captureDateShipShapeProperty,
+        ss:christeningDateShipShapeProperty,
+        ss:classShipShapeProperty,
+        ss:commissioningDateShipShapeProperty,
+        ss:completionDateShipShapeProperty,
+        ss:costShipShapeProperty,
+        ss:countryShipShapeProperty,
+        ss:decommissioningDateShipShapeProperty,
+        ss:differentFromShipShapeProperty,
+        ss:elevationShipShapeProperty,
+        ss:heightShipShapeProperty,
+        ss:homeportShipShapeProperty,
+        ss:imdbIdShipShapeProperty,
+        ss:instanceTypeShipShapeProperty,
+        ss:labelShipShapeProperty,
+        ss:layingDownShipShapeProperty,
+        ss:lengthShipShapeProperty,
+        ss:maidenVoyageShipShapeProperty,
+        ss:mottoShipShapeProperty,
+        ss:nameShipShapeProperty,
+        ss:nickShipShapeProperty,
+        ss:operatorShipShapeProperty,
+        ss:orderDateShipShapeProperty,
+        ss:originalNameShipShapeProperty,
+        ss:ownerShipShapeProperty,
+        ss:populationTotalShipShapeProperty,
+        ss:powerTypeShipShapeProperty,
+        ss:recommissioningDateShipShapeProperty,
+        ss:sameAsShipShapeProperty,
+        ss:seeAlsoShipShapeProperty,
+        ss:shipBeamShipShapeProperty,
+        ss:shipDisplacementShipShapeProperty,
+        ss:shipDraftShipShapeProperty,
+        ss:shipLaunchShipShapeProperty,
+        ss:statusShipShapeProperty,
+        ss:subdivisionShipShapeProperty,
+        ss:timeZoneShipShapeProperty,
+        ss:topSpeedShipShapeProperty,
+        ss:typeShipShapeProperty,
+        ss:utcOffsetShipShapeProperty ;
+    sh:targetClass dbo:Ship .
+
+ss:ShoppingMallShape a sh:NodeShape ;
+    void:entities "2708"^^xsd:int ;
+    sh:property ss:addressShoppingMallShapeProperty,
+        ss:affiliationShoppingMallShapeProperty,
+        ss:alternativeNameShoppingMallShapeProperty,
+        ss:architectShoppingMallShapeProperty,
+        ss:architecturalStyleShoppingMallShapeProperty,
+        ss:awardShoppingMallShapeProperty,
+        ss:buildingEndDateShoppingMallShapeProperty,
+        ss:buildingStartDateShoppingMallShapeProperty,
+        ss:cityShoppingMallShapeProperty,
+        ss:classificationShoppingMallShapeProperty,
+        ss:costShoppingMallShapeProperty,
+        ss:countryShoppingMallShapeProperty,
+        ss:dateOfAbandonmentShoppingMallShapeProperty,
+        ss:destructionDateShoppingMallShapeProperty,
+        ss:developerShoppingMallShapeProperty,
+        ss:differentFromShoppingMallShapeProperty,
+        ss:elevatorCountShoppingMallShapeProperty,
+        ss:floorAreaShoppingMallShapeProperty,
+        ss:floorCountShoppingMallShapeProperty,
+        ss:formerNameShoppingMallShapeProperty,
+        ss:heightShoppingMallShapeProperty,
+        ss:homepageShoppingMallShapeProperty,
+        ss:instanceTypeShoppingMallShapeProperty,
+        ss:knownForShoppingMallShapeProperty,
+        ss:labelShoppingMallShapeProperty,
+        ss:locationShoppingMallShapeProperty,
+        ss:nameShoppingMallShapeProperty,
+        ss:numberOfParkingSpacesShoppingMallShapeProperty,
+        ss:numberOfRestaurantsShoppingMallShapeProperty,
+        ss:numberOfRoomsShoppingMallShapeProperty,
+        ss:numberOfStoresShoppingMallShapeProperty,
+        ss:openingDateShoppingMallShapeProperty,
+        ss:originalNameShoppingMallShapeProperty,
+        ss:ownerShoppingMallShapeProperty,
+        ss:sameAsShoppingMallShapeProperty,
+        ss:seeAlsoShoppingMallShapeProperty,
+        ss:statusShoppingMallShapeProperty,
+        ss:typeShoppingMallShapeProperty ;
+    sh:targetClass dbo:ShoppingMall .
+
+ss:SnookerChampShape a sh:NodeShape ;
+    void:entities "31"^^xsd:int ;
+    sh:property ss:activeYearsEndYearSnookerChampShapeProperty,
+        ss:activeYearsStartYearSnookerChampShapeProperty,
+        ss:aliasSnookerChampShapeProperty,
+        ss:bestFinishSnookerChampShapeProperty,
+        ss:birthDateSnookerChampShapeProperty,
+        ss:birthPlaceSnookerChampShapeProperty,
+        ss:centuryBreaksSnookerChampShapeProperty,
+        ss:deathDateSnookerChampShapeProperty,
+        ss:deathPlaceSnookerChampShapeProperty,
+        ss:differentFromSnookerChampShapeProperty,
+        ss:grossSnookerChampShapeProperty,
+        ss:highestBreakSnookerChampShapeProperty,
+        ss:highestRankSnookerChampShapeProperty,
+        ss:imdbIdSnookerChampShapeProperty,
+        ss:instanceTypeSnookerChampShapeProperty,
+        ss:labelSnookerChampShapeProperty,
+        ss:nameSnookerChampShapeProperty,
+        ss:otherWinsSnookerChampShapeProperty,
+        ss:rankingWinsSnookerChampShapeProperty,
+        ss:seeAlsoSnookerChampShapeProperty,
+        ss:sportCountrySnookerChampShapeProperty,
+        ss:worldChampionTitleYearSnookerChampShapeProperty ;
+    sh:targetClass dbo:SnookerChamp .
+
+ss:SnookerPlayerShape a sh:NodeShape ;
+    void:entities "417"^^xsd:int ;
+    sh:property ss:activeYearsEndYearSnookerPlayerShapeProperty,
+        ss:activeYearsStartYearSnookerPlayerShapeProperty,
+        ss:aliasSnookerPlayerShapeProperty,
+        ss:bestFinishSnookerPlayerShapeProperty,
+        ss:birthDateSnookerPlayerShapeProperty,
+        ss:birthPlaceSnookerPlayerShapeProperty,
+        ss:centuryBreaksSnookerPlayerShapeProperty,
+        ss:deathDateSnookerPlayerShapeProperty,
+        ss:deathPlaceSnookerPlayerShapeProperty,
+        ss:differentFromSnookerPlayerShapeProperty,
+        ss:grossSnookerPlayerShapeProperty,
+        ss:highestBreakSnookerPlayerShapeProperty,
+        ss:highestRankSnookerPlayerShapeProperty,
+        ss:imdbIdSnookerPlayerShapeProperty,
+        ss:instanceTypeSnookerPlayerShapeProperty,
+        ss:labelSnookerPlayerShapeProperty,
+        ss:nameSnookerPlayerShapeProperty,
+        ss:otherWinsSnookerPlayerShapeProperty,
+        ss:rankingWinsSnookerPlayerShapeProperty,
+        ss:seeAlsoSnookerPlayerShapeProperty,
+        ss:sportCountrySnookerPlayerShapeProperty ;
+    sh:targetClass dbo:SnookerPlayer .
+
+ss:SnookerWorldRankingShape a sh:NodeShape ;
+    void:entities "34"^^xsd:int ;
+    sh:property ss:activeYearsEndYearSnookerWorldRankingShapeProperty,
+        ss:activeYearsStartYearSnookerWorldRankingShapeProperty,
+        ss:birthDateSnookerWorldRankingShapeProperty,
+        ss:deathDateSnookerWorldRankingShapeProperty,
+        ss:highestRankSnookerWorldRankingShapeProperty,
+        ss:instanceTypeSnookerWorldRankingShapeProperty,
+        ss:labelSnookerWorldRankingShapeProperty,
+        ss:nameSnookerWorldRankingShapeProperty,
+        ss:sportCountrySnookerWorldRankingShapeProperty ;
+    sh:targetClass dbo:SnookerWorldRanking .
+
+ss:SoftballLeagueShape a sh:NodeShape ;
+    void:entities "19"^^xsd:int ;
+    sh:property ss:countrySoftballLeagueShapeProperty,
+        ss:currentSeasonSoftballLeagueShapeProperty,
+        ss:foundingYearSoftballLeagueShapeProperty,
+        ss:homepageSoftballLeagueShapeProperty,
+        ss:instanceTypeSoftballLeagueShapeProperty,
+        ss:labelSoftballLeagueShapeProperty,
+        ss:mottoSoftballLeagueShapeProperty,
+        ss:participantSoftballLeagueShapeProperty,
+        ss:seeAlsoSoftballLeagueShapeProperty,
+        ss:titleSoftballLeagueShapeProperty ;
+    sh:targetClass dbo:SoftballLeague .
+
+ss:SpeedwayLeagueShape a sh:NodeShape ;
+    void:entities "18"^^xsd:int ;
+    sh:property ss:countrySpeedwayLeagueShapeProperty,
+        ss:currentSeasonSpeedwayLeagueShapeProperty,
+        ss:foundingYearSpeedwayLeagueShapeProperty,
+        ss:homepageSpeedwayLeagueShapeProperty,
+        ss:instanceTypeSpeedwayLeagueShapeProperty,
+        ss:labelSpeedwayLeagueShapeProperty,
+        ss:mottoSpeedwayLeagueShapeProperty,
+        ss:participantSpeedwayLeagueShapeProperty,
+        ss:sameAsSpeedwayLeagueShapeProperty,
+        ss:titleSpeedwayLeagueShapeProperty ;
+    sh:targetClass dbo:SpeedwayLeague .
+
+ss:StadiumShape a sh:NodeShape ;
+    void:entities "287"^^xsd:int ;
+    sh:property ss:addressStadiumShapeProperty,
+        ss:architectStadiumShapeProperty,
+        ss:areaTotalStadiumShapeProperty,
+        ss:buildingStartDateStadiumShapeProperty,
+        ss:closingDateStadiumShapeProperty,
+        ss:costStadiumShapeProperty,
+        ss:countryStadiumShapeProperty,
+        ss:demolitionDateStadiumShapeProperty,
+        ss:differentFromStadiumShapeProperty,
+        ss:formerNameStadiumShapeProperty,
+        ss:genreStadiumShapeProperty,
+        ss:homepageStadiumShapeProperty,
+        ss:instanceTypeStadiumShapeProperty,
+        ss:labelStadiumShapeProperty,
+        ss:locationStadiumShapeProperty,
+        ss:nameStadiumShapeProperty,
+        ss:nickStadiumShapeProperty,
+        ss:nrhpReferenceNumberStadiumShapeProperty,
+        ss:numberOfSuitesStadiumShapeProperty,
+        ss:openingDateStadiumShapeProperty,
+        ss:operatorStadiumShapeProperty,
+        ss:originalNameStadiumShapeProperty,
+        ss:ownerStadiumShapeProperty,
+        ss:rebuildingDateStadiumShapeProperty,
+        ss:sameAsStadiumShapeProperty,
+        ss:seatingCapacityStadiumShapeProperty,
+        ss:seeAlsoStadiumShapeProperty,
+        ss:tenantStadiumShapeProperty,
+        ss:typeStadiumShapeProperty,
+        ss:yearOfConstructionStadiumShapeProperty ;
+    sh:targetClass dbo:Stadium .
+
+ss:SumoWrestlerShape a sh:NodeShape ;
+    void:entities "525"^^xsd:int ;
+    sh:property ss:activeYearsEndYearSumoWrestlerShapeProperty,
+        ss:activeYearsStartYearSumoWrestlerShapeProperty,
+        ss:billedSumoWrestlerShapeProperty,
+        ss:birthDateSumoWrestlerShapeProperty,
+        ss:birthPlaceSumoWrestlerShapeProperty,
+        ss:deathCauseSumoWrestlerShapeProperty,
+        ss:deathDateSumoWrestlerShapeProperty,
+        ss:deathPlaceSumoWrestlerShapeProperty,
+        ss:differentFromSumoWrestlerShapeProperty,
+        ss:heightSumoWrestlerShapeProperty,
+        ss:imdbIdSumoWrestlerShapeProperty,
+        ss:instanceTypeSumoWrestlerShapeProperty,
+        ss:labelSumoWrestlerShapeProperty,
+        ss:nameSumoWrestlerShapeProperty,
+        ss:nickSumoWrestlerShapeProperty,
+        ss:trainerSumoWrestlerShapeProperty,
+        ss:weightSumoWrestlerShapeProperty ;
+    sh:targetClass dbo:SumoWrestler .
+
+ss:TennisTournamentShape a sh:NodeShape ;
+    void:entities "6962"^^xsd:int ;
+    sh:property ss:budgetTennisTournamentShapeProperty,
+        ss:categoryTennisTournamentShapeProperty,
+        ss:championInDoubleFemaleTennisTournamentShapeProperty,
+        ss:championInDoubleMaleTennisTournamentShapeProperty,
+        ss:championInMixedDoubleTennisTournamentShapeProperty,
+        ss:championInSingleFemaleTennisTournamentShapeProperty,
+        ss:championInSingleMaleTennisTournamentShapeProperty,
+        ss:differentFromTennisTournamentShapeProperty,
+        ss:endDateTennisTournamentShapeProperty,
+        ss:instanceTypeTennisTournamentShapeProperty,
+        ss:labelTennisTournamentShapeProperty,
+        ss:locationTennisTournamentShapeProperty,
+        ss:nameTennisTournamentShapeProperty,
+        ss:sameAsTennisTournamentShapeProperty,
+        ss:seeAlsoTennisTournamentShapeProperty,
+        ss:startDateTennisTournamentShapeProperty,
+        ss:tennisSurfaceTypeTennisTournamentShapeProperty ;
+    sh:targetClass dbo:TennisTournament .
+
+ss:TenureShape a sh:NodeShape ;
+    void:entities "241280"^^xsd:int ;
+    sh:property ss:alongsideTenureShapeProperty,
+        ss:appointerTenureShapeProperty,
+        ss:chancellorTenureShapeProperty,
+        ss:constituencyDistrictTenureShapeProperty,
+        ss:countryTenureShapeProperty,
+        ss:deputyTenureShapeProperty,
+        ss:electionDateTenureShapeProperty,
+        ss:endTenureShapeProperty,
+        ss:governorGeneralTenureShapeProperty,
+        ss:governorTenureShapeProperty,
+        ss:incumbentTenureShapeProperty,
+        ss:instanceTypeTenureShapeProperty,
+        ss:leaderTenureShapeProperty,
+        ss:lieutenantTenureShapeProperty,
+        ss:ministerTenureShapeProperty,
+        ss:nomineeTenureShapeProperty,
+        ss:officeTenureShapeProperty,
+        ss:partyTenureShapeProperty,
+        ss:predecessorTenureShapeProperty,
+        ss:presidentTenureShapeProperty,
+        ss:primeMinisterTenureShapeProperty,
+        ss:runningMateTenureShapeProperty,
+        ss:seniorityTenureShapeProperty,
+        ss:speakerTenureShapeProperty,
+        ss:startTenureShapeProperty,
+        ss:stateTenureShapeProperty,
+        ss:successorTenureShapeProperty,
+        ss:taoiseachTenureShapeProperty,
+        ss:titleTenureShapeProperty,
+        ss:viceLeaderTenureShapeProperty,
+        ss:vicePresidentTenureShapeProperty,
+        ss:vicePrimeMinisterTenureShapeProperty ;
+    sh:targetClass dbo:Tenure .
+
+ss:TunnelShape a sh:NodeShape ;
+    void:entities "126"^^xsd:int ;
+    sh:property ss:architectTunnelShapeProperty,
+        ss:buildingEndYearTunnelShapeProperty,
+        ss:buildingStartYearTunnelShapeProperty,
+        ss:closingYearTunnelShapeProperty,
+        ss:heightTunnelShapeProperty,
+        ss:instanceTypeTunnelShapeProperty,
+        ss:labelTunnelShapeProperty,
+        ss:lengthTunnelShapeProperty,
+        ss:lineLengthTunnelShapeProperty,
+        ss:locationTunnelShapeProperty,
+        ss:nameTunnelShapeProperty,
+        ss:operatorTunnelShapeProperty,
+        ss:ownerTunnelShapeProperty,
+        ss:pictureTunnelShapeProperty,
+        ss:rebuildingYearTunnelShapeProperty,
+        ss:routeEndLocationTunnelShapeProperty,
+        ss:routeStartLocationTunnelShapeProperty,
+        ss:statusTunnelShapeProperty,
+        ss:widthTunnelShapeProperty,
+        ss:yearOfConstructionTunnelShapeProperty ;
+    sh:targetClass dbo:Tunnel .
+
+ss:acquirementDateShipShapeProperty a sh:PropertyShape ;
+    void:entities "1495"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:acquirementDate .
+
+ss:activeYearsEndDateCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "2101"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:activeYearsEndDate .
+
+ss:activeYearsEndDateShipShapeProperty a sh:PropertyShape ;
+    void:entities "797"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:activeYearsEndDate .
+
+ss:activeYearsEndYearSnookerChampShapeProperty a sh:PropertyShape ;
+    void:entities "20"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:path dbo:activeYearsEndYear .
+
+ss:activeYearsEndYearSnookerPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "338"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:path dbo:activeYearsEndYear .
+
+ss:activeYearsEndYearSnookerWorldRankingShapeProperty a sh:PropertyShape ;
+    void:entities "34"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:minCount 1 ;
+    sh:path dbo:activeYearsEndYear .
+
+ss:activeYearsEndYearSumoWrestlerShapeProperty a sh:PropertyShape ;
+    void:entities "6"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:path dbo:activeYearsEndYear .
+
+ss:activeYearsStartDateCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "2106"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:activeYearsStartDate .
+
+ss:activeYearsStartDateShipShapeProperty a sh:PropertyShape ;
+    void:entities "711"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:activeYearsStartDate .
+
+ss:activeYearsStartYearSnookerChampShapeProperty a sh:PropertyShape ;
+    void:entities "20"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:path dbo:activeYearsStartYear .
+
+ss:activeYearsStartYearSnookerPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "341"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:path dbo:activeYearsStartYear .
+
+ss:activeYearsStartYearSnookerWorldRankingShapeProperty a sh:PropertyShape ;
+    void:entities "34"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:minCount 1 ;
+    sh:path dbo:activeYearsStartYear .
+
+ss:activeYearsStartYearSumoWrestlerShapeProperty a sh:PropertyShape ;
+    void:entities "7"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:path dbo:activeYearsStartYear .
+
+ss:addressHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path dbo:address .
+
+ss:addressInRoadRoadShapeProperty a sh:PropertyShape ;
+    void:entities "4"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:addressInRoad .
+
+ss:addressShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "1368"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path dbo:address .
+
+ss:addressStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "98"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path dbo:address .
+
+ss:affiliationHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "810"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:affiliation .
+
+ss:affiliationShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path dbo:affiliation .
+
+ss:aliasRoadJunctionShapeProperty a sh:PropertyShape ;
+    void:entities "68"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path dbo:alias .
+
+ss:aliasSnookerChampShapeProperty a sh:PropertyShape ;
+    void:entities "19"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path dbo:alias .
+
+ss:aliasSnookerPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "98"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path dbo:alias .
+
+ss:almaMaterCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "818"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:almaMater .
+
+ss:alongsideTenureShapeProperty a sh:PropertyShape ;
+    void:entities "42"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:alongside .
+
+ss:alternativeNameHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path dbo:alternativeName .
+
+ss:alternativeNameSeaShapeProperty a sh:PropertyShape ;
+    void:entities "7"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path dbo:alternativeName .
+
+ss:alternativeNameShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "17"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path dbo:alternativeName .
+
+ss:appointerCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:appointer .
+
+ss:appointerTenureShapeProperty a sh:PropertyShape ;
+    void:entities "4"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:appointer .
+
+ss:architectHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:architect .
+
+ss:architectShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "22"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:architect .
+
+ss:architectStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:architect .
+
+ss:architectTunnelShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:architect .
+
+ss:architecturalStyleHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "4"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:architecturalStyle .
+
+ss:architecturalStyleShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:architecturalStyle .
+
+ss:areaHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:area .
+
+ss:areaOfCatchmentSeaShapeProperty a sh:PropertyShape ;
+    void:entities "6"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:areaOfCatchment .
+
+ss:areaTotalSeaShapeProperty a sh:PropertyShape ;
+    void:entities "48"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:areaTotal .
+
+ss:areaTotalStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "6"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:areaTotal .
+
+ss:associateCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "3"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:associate .
+
+ss:averageDepthSeaShapeProperty a sh:PropertyShape ;
+    void:entities "30"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:averageDepth .
+
+ss:awardCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "14"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:award .
+
+ss:awardShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path dbo:award .
+
+ss:battleCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:battle .
+
+ss:bedCountHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "1926"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:nonNegativeInteger ;
+    sh:path dbo:bedCount .
+
+ss:beltwayCityRoadShapeProperty a sh:PropertyShape ;
+    void:entities "6"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:beltwayCity .
+
+ss:bestFinishSnookerChampShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:bestFinish .
+
+ss:bestFinishSnookerPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "286"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:bestFinish .
+
+ss:billedSumoWrestlerShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:billed .
+
+ss:binomialAuthorityAmphibianShapeProperty a sh:PropertyShape ;
+    void:entities "3"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:binomialAuthority .
+
+ss:binomialAuthorityConiferShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:binomialAuthority .
+
+ss:binomialAuthorityFernShapeProperty a sh:PropertyShape ;
+    void:entities "4"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:binomialAuthority .
+
+ss:binomialAuthorityMossShapeProperty a sh:PropertyShape ;
+    void:entities "11"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:binomialAuthority .
+
+ss:birthDateCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "2416"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:birthDate .
+
+ss:birthDateDartsPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "631"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:birthDate .
+
+ss:birthDateNetballPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "401"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:birthDate .
+
+ss:birthDateRadioHostShapeProperty a sh:PropertyShape ;
+    void:entities "261"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:birthDate .
+
+ss:birthDateSnookerChampShapeProperty a sh:PropertyShape ;
+    void:entities "26"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:birthDate .
+
+ss:birthDateSnookerPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "380"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:birthDate .
+
+ss:birthDateSnookerWorldRankingShapeProperty a sh:PropertyShape ;
+    void:entities "34"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:minCount 1 ;
+    sh:path dbo:birthDate .
+
+ss:birthDateSumoWrestlerShapeProperty a sh:PropertyShape ;
+    void:entities "511"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:birthDate .
+
+ss:birthNameCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "62"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path dbo:birthName .
+
+ss:birthNameRadioHostShapeProperty a sh:PropertyShape ;
+    void:entities "187"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path dbo:birthName .
+
+ss:birthPlaceCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "546"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:birthPlace .
+
+ss:birthPlaceDartsPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "75"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:birthPlace .
+
+ss:birthPlaceNetballPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "9"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:birthPlace .
+
+ss:birthPlaceRadioHostShapeProperty a sh:PropertyShape ;
+    void:entities "14"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:birthPlace .
+
+ss:birthPlaceSnookerChampShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:birthPlace .
+
+ss:birthPlaceSnookerPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "19"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:birthPlace .
+
+ss:birthPlaceSumoWrestlerShapeProperty a sh:PropertyShape ;
+    void:entities "49"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:birthPlace .
+
+ss:budgetTennisTournamentShapeProperty a sh:PropertyShape ;
+    void:entities "3803"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:budget .
+
+ss:builderShipShapeProperty a sh:PropertyShape ;
+    void:entities "370"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:builder .
+
+ss:buildingEndDateHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "4"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:buildingEndDate .
+
+ss:buildingEndDateRoadShapeProperty a sh:PropertyShape ;
+    void:entities "388"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:buildingEndDate .
+
+ss:buildingEndDateShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "12"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:buildingEndDate .
+
+ss:buildingEndYearTunnelShapeProperty a sh:PropertyShape ;
+    void:entities "6"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:path dbo:buildingEndYear .
+
+ss:buildingStartDateHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:buildingStartDate .
+
+ss:buildingStartDateRoadShapeProperty a sh:PropertyShape ;
+    void:entities "146"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:buildingStartDate .
+
+ss:buildingStartDateShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "13"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:buildingStartDate .
+
+ss:buildingStartDateStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "72"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:buildingStartDate .
+
+ss:buildingStartYearTunnelShapeProperty a sh:PropertyShape ;
+    void:entities "7"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:path dbo:buildingStartYear .
+
+ss:capacityCricketTeamShapeProperty a sh:PropertyShape ;
+    void:entities "211"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:nonNegativeInteger ;
+    sh:path dbo:capacity .
+
+ss:captureDateShipShapeProperty a sh:PropertyShape ;
+    void:entities "96"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:captureDate .
+
+ss:categoryTennisTournamentShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:category .
+
+ss:centuryBreaksSnookerChampShapeProperty a sh:PropertyShape ;
+    void:entities "16"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:integer ;
+    sh:path dbo:centuryBreaks .
+
+ss:centuryBreaksSnookerPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "288"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:integer ;
+    sh:path dbo:centuryBreaks .
+
+ss:ceoCricketTeamShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:ceo .
+
+ss:ceoGolfLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path dbo:ceo .
+
+ss:chairmanCricketTeamShapeProperty a sh:PropertyShape ;
+    void:entities "3"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:chairman .
+
+ss:championInDoubleFemaleTennisTournamentShapeProperty a sh:PropertyShape ;
+    void:entities "22"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:championInDoubleFemale .
+
+ss:championInDoubleMaleTennisTournamentShapeProperty a sh:PropertyShape ;
+    void:entities "11"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:championInDoubleMale .
+
+ss:championInMixedDoubleTennisTournamentShapeProperty a sh:PropertyShape ;
+    void:entities "7"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:championInMixedDouble .
+
+ss:championInSingleFemaleTennisTournamentShapeProperty a sh:PropertyShape ;
+    void:entities "16"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:championInSingleFemale .
+
+ss:championInSingleMaleTennisTournamentShapeProperty a sh:PropertyShape ;
+    void:entities "24"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:championInSingleMale .
+
+ss:chancellorTenureShapeProperty a sh:PropertyShape ;
+    void:entities "4"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:chancellor .
+
+ss:childCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "14"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:child .
+
+ss:christeningDateShipShapeProperty a sh:PropertyShape ;
+    void:entities "337"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:christeningDate .
+
+ss:cityCricketTeamShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:city .
+
+ss:cityFootballMatchShapeProperty a sh:PropertyShape ;
+    void:entities "251"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:city .
+
+ss:cityHockeyTeamShapeProperty a sh:PropertyShape ;
+    void:entities "179"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:city .
+
+ss:cityHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:city .
+
+ss:cityRoadShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:city .
+
+ss:cityShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:city .
+
+ss:classAmphibianShapeProperty a sh:PropertyShape ;
+    void:entities "156"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:class .
+
+ss:classConiferShapeProperty a sh:PropertyShape ;
+    void:entities "41"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path dbo:class .
+
+ss:classFernShapeProperty a sh:PropertyShape ;
+    void:entities "54"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path dbo:class .
+
+ss:classMossShapeProperty a sh:PropertyShape ;
+    void:entities "209"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path dbo:class .
+
+ss:classShipShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:class .
+
+ss:classificationShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:classification .
+
+ss:closingDateHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "21"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:closingDate .
+
+ss:closingDateStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "5"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:closingDate .
+
+ss:closingYearHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "428"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:path dbo:closingYear .
+
+ss:closingYearTunnelShapeProperty a sh:PropertyShape ;
+    void:entities "7"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:path dbo:closingYear .
+
+ss:coachCricketTeamShapeProperty a sh:PropertyShape ;
+    void:entities "218"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:coach .
+
+ss:coachHockeyTeamShapeProperty a sh:PropertyShape ;
+    void:entities "10"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:coach .
+
+ss:colourHockeyTeamShapeProperty a sh:PropertyShape ;
+    void:entities "5"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:colour .
+
+ss:commissioningDateShipShapeProperty a sh:PropertyShape ;
+    void:entities "5298"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:commissioningDate .
+
+ss:committeeCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "8"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:committee .
+
+ss:completionDateShipShapeProperty a sh:PropertyShape ;
+    void:entities "1789"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:completionDate .
+
+ss:conservationStatusAmphibianShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:conservationStatus .
+
+ss:conservationStatusConiferShapeProperty a sh:PropertyShape ;
+    void:entities "15"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:conservationStatus .
+
+ss:conservationStatusFernShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:conservationStatus .
+
+ss:conservationStatusMossShapeProperty a sh:PropertyShape ;
+    void:entities "41"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:conservationStatus .
+
+ss:conservationStatusSystemAmphibianShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:conservationStatusSystem .
+
+ss:conservationStatusSystemConiferShapeProperty a sh:PropertyShape ;
+    void:entities "15"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:conservationStatusSystem .
+
+ss:conservationStatusSystemFernShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:conservationStatusSystem .
+
+ss:conservationStatusSystemMossShapeProperty a sh:PropertyShape ;
+    void:entities "46"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:conservationStatusSystem .
+
+ss:constituencyDistrictTenureShapeProperty a sh:PropertyShape ;
+    void:entities "611"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:constituencyDistrict .
+
+ss:costShipShapeProperty a sh:PropertyShape ;
+    void:entities "922"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:cost .
+
+ss:costShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "5"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:cost .
+
+ss:costStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "28"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:cost .
+
+ss:countryCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "212"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:country .
+
+ss:countryDartsPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "305"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:country .
+
+ss:countryGolfLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "14"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:country .
+
+ss:countryHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "1031"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:country .
+
+ss:countryRadioHostShapeProperty a sh:PropertyShape ;
+    void:entities "136"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:country .
+
+ss:countryRoadJunctionShapeProperty a sh:PropertyShape ;
+    void:entities "10"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:country .
+
+ss:countryRoadShapeProperty a sh:PropertyShape ;
+    void:entities "704"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:country .
+
+ss:countrySeaShapeProperty a sh:PropertyShape ;
+    void:entities "54"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:country .
+
+ss:countryShipShapeProperty a sh:PropertyShape ;
+    void:entities "4815"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:country .
+
+ss:countryShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "12"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:country .
+
+ss:countrySoftballLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "4"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:country .
+
+ss:countrySpeedwayLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "15"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:country .
+
+ss:countryStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:country .
+
+ss:countryTenureShapeProperty a sh:PropertyShape ;
+    void:entities "1288"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:country .
+
+ss:countyRoadShapeProperty a sh:PropertyShape ;
+    void:entities "293"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:county .
+
+ss:currentSeasonGolfLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "29"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:currentSeason .
+
+ss:currentSeasonSoftballLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "7"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:currentSeason .
+
+ss:currentSeasonSpeedwayLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "3"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:currentSeason .
+
+ss:dateFootballMatchShapeProperty a sh:PropertyShape ;
+    void:entities "3566"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:date .
+
+ss:dateOfAbandonmentRoadShapeProperty a sh:PropertyShape ;
+    void:entities "62"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:dateOfAbandonment .
+
+ss:dateOfAbandonmentShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "87"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:dateOfAbandonment .
+
+ss:deathCauseSumoWrestlerShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:deathCause .
+
+ss:deathDateCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "2242"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:deathDate .
+
+ss:deathDateDartsPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "32"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:deathDate .
+
+ss:deathDateRadioHostShapeProperty a sh:PropertyShape ;
+    void:entities "61"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:deathDate .
+
+ss:deathDateSnookerChampShapeProperty a sh:PropertyShape ;
+    void:entities "6"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:deathDate .
+
+ss:deathDateSnookerPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "28"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:deathDate .
+
+ss:deathDateSnookerWorldRankingShapeProperty a sh:PropertyShape ;
+    void:entities "6"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:deathDate .
+
+ss:deathDateSumoWrestlerShapeProperty a sh:PropertyShape ;
+    void:entities "162"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:deathDate .
+
+ss:deathPlaceCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "234"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:deathPlace .
+
+ss:deathPlaceDartsPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:deathPlace .
+
+ss:deathPlaceRadioHostShapeProperty a sh:PropertyShape ;
+    void:entities "3"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:deathPlace .
+
+ss:deathPlaceSnookerChampShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:deathPlace .
+
+ss:deathPlaceSnookerPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:deathPlace .
+
+ss:deathPlaceSumoWrestlerShapeProperty a sh:PropertyShape ;
+    void:entities "11"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:deathPlace .
+
+ss:decommissioningDateShipShapeProperty a sh:PropertyShape ;
+    void:entities "1948"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:decommissioningDate .
+
+ss:demolitionDateStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:demolitionDate .
+
+ss:depictionAmphibianShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path <http://xmlns.com/foaf/0.1/depiction> .
+
+ss:depictionConiferShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path <http://xmlns.com/foaf/0.1/depiction> .
+
+ss:depictionMossShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path <http://xmlns.com/foaf/0.1/depiction> .
+
+ss:deputyCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:deputy .
+
+ss:deputyTenureShapeProperty a sh:PropertyShape ;
+    void:entities "28"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:deputy .
+
+ss:destructionDateShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:destructionDate .
+
+ss:developerShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "4"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:developer .
+
+ss:differentFromComicStripShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path owl:differentFrom .
+
+ss:differentFromCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path owl:differentFrom .
+
+ss:differentFromCricketTeamShapeProperty a sh:PropertyShape ;
+    void:entities "7"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path owl:differentFrom .
+
+ss:differentFromDartsPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path owl:differentFrom .
+
+ss:differentFromFootballMatchShapeProperty a sh:PropertyShape ;
+    void:entities "5"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path owl:differentFrom .
+
+ss:differentFromHockeyTeamShapeProperty a sh:PropertyShape ;
+    void:entities "8"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path owl:differentFrom .
+
+ss:differentFromHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path owl:differentFrom .
+
+ss:differentFromRacecourseShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path owl:differentFrom .
+
+ss:differentFromRadioHostShapeProperty a sh:PropertyShape ;
+    void:entities "3"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path owl:differentFrom .
+
+ss:differentFromRoadJunctionShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path owl:differentFrom .
+
+ss:differentFromRoadShapeProperty a sh:PropertyShape ;
+    void:entities "13"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path owl:differentFrom .
+
+ss:differentFromShipShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path owl:differentFrom .
+
+ss:differentFromShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path owl:differentFrom .
+
+ss:differentFromSnookerChampShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path owl:differentFrom .
+
+ss:differentFromSnookerPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path owl:differentFrom .
+
+ss:differentFromStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path owl:differentFrom .
+
+ss:differentFromSumoWrestlerShapeProperty a sh:PropertyShape ;
+    void:entities "6"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path owl:differentFrom .
+
+ss:differentFromTennisTournamentShapeProperty a sh:PropertyShape ;
+    void:entities "10"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path owl:differentFrom .
+
+ss:divisionConiferShapeProperty a sh:PropertyShape ;
+    void:entities "42"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path dbo:division .
+
+ss:divisionFernShapeProperty a sh:PropertyShape ;
+    void:entities "56"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:division .
+
+ss:divisionMossShapeProperty a sh:PropertyShape ;
+    void:entities "5"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:division .
+
+ss:electionDateTenureShapeProperty a sh:PropertyShape ;
+    void:entities "76"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:electionDate .
+
+ss:electionMajorityCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:nonNegativeInteger ;
+    sh:path dbo:electionMajority .
+
+ss:elevationSeaShapeProperty a sh:PropertyShape ;
+    void:entities "6"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:elevation .
+
+ss:elevationShipShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:elevation .
+
+ss:elevatorCountShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "4"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:nonNegativeInteger ;
+    sh:path dbo:elevatorCount .
+
+ss:endDateTennisTournamentShapeProperty a sh:PropertyShape ;
+    void:entities "68"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:endDate .
+
+ss:endTenureShapeProperty a sh:PropertyShape ;
+    void:entities "130234"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:end .
+
+ss:eventFootballMatchShapeProperty a sh:PropertyShape ;
+    void:entities "5"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:event .
+
+ss:familyAmphibianShapeProperty a sh:PropertyShape ;
+    void:entities "7"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:family .
+
+ss:familyConiferShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:family .
+
+ss:familyFernShapeProperty a sh:PropertyShape ;
+    void:entities "45"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path dbo:family .
+
+ss:familyMossShapeProperty a sh:PropertyShape ;
+    void:entities "100"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:family .
+
+ss:floorAreaHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:floorArea .
+
+ss:floorAreaShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "1602"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:floorArea .
+
+ss:floorCountHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:positiveInteger ;
+    sh:path dbo:floorCount .
+
+ss:floorCountShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "31"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:positiveInteger ;
+    sh:path dbo:floorCount .
+
+ss:followingEventFootballMatchShapeProperty a sh:PropertyShape ;
+    void:entities "9"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:followingEvent .
+
+ss:formationDateCricketTeamShapeProperty a sh:PropertyShape ;
+    void:entities "6"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:formationDate .
+
+ss:formationDateGolfLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:formationDate .
+
+ss:formationDateHockeyTeamShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:formationDate .
+
+ss:formationYearHockeyTeamShapeProperty a sh:PropertyShape ;
+    void:entities "59"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:path dbo:formationYear .
+
+ss:formerNameRoadShapeProperty a sh:PropertyShape ;
+    void:entities "372"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path dbo:formerName .
+
+ss:formerNameShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "4"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path dbo:formerName .
+
+ss:formerNameStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "66"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path dbo:formerName .
+
+ss:foundingYearGolfLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "36"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:path dbo:foundingYear .
+
+ss:foundingYearHockeyTeamShapeProperty a sh:PropertyShape ;
+    void:entities "918"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:path dbo:foundingYear .
+
+ss:foundingYearSoftballLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "18"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:path dbo:foundingYear .
+
+ss:foundingYearSpeedwayLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "18"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:minCount 1 ;
+    sh:path dbo:foundingYear .
+
+ss:frozenSeaShapeProperty a sh:PropertyShape ;
+    void:entities "13"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:frozen .
+
+ss:generalManagerHockeyTeamShapeProperty a sh:PropertyShape ;
+    void:entities "10"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:generalManager .
+
+ss:genreStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "21"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:genre .
+
+ss:genusAmphibianShapeProperty a sh:PropertyShape ;
+    void:entities "4"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path dbo:genus .
+
+ss:genusConiferShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:genus .
+
+ss:genusFernShapeProperty a sh:PropertyShape ;
+    void:entities "4"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:genus .
+
+ss:genusMossShapeProperty a sh:PropertyShape ;
+    void:entities "78"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:genus .
+
+ss:governorCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "34"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:governor .
+
+ss:governorGeneralTenureShapeProperty a sh:PropertyShape ;
+    void:entities "123"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:governorGeneral .
+
+ss:governorTenureShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:governor .
+
+ss:grossSnookerChampShapeProperty a sh:PropertyShape ;
+    void:entities "15"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:gross .
+
+ss:grossSnookerPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "310"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:gross .
+
+ss:groundCricketTeamShapeProperty a sh:PropertyShape ;
+    void:entities "6"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:ground .
+
+ss:heightNetballPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "379"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:height .
+
+ss:heightRoadJunctionShapeProperty a sh:PropertyShape ;
+    void:entities "5"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:height .
+
+ss:heightShipShapeProperty a sh:PropertyShape ;
+    void:entities "1406"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:height .
+
+ss:heightShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "4"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:height .
+
+ss:heightSumoWrestlerShapeProperty a sh:PropertyShape ;
+    void:entities "7"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:height .
+
+ss:heightTunnelShapeProperty a sh:PropertyShape ;
+    void:entities "17"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:height .
+
+ss:highestBreakSnookerChampShapeProperty a sh:PropertyShape ;
+    void:entities "22"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:integer ;
+    sh:path dbo:highestBreak .
+
+ss:highestBreakSnookerPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "327"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:integer ;
+    sh:path dbo:highestBreak .
+
+ss:highestRankSnookerChampShapeProperty a sh:PropertyShape ;
+    void:entities "20"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:integer ;
+    sh:path dbo:highestRank .
+
+ss:highestRankSnookerPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "324"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:integer ;
+    sh:path dbo:highestRank .
+
+ss:highestRankSnookerWorldRankingShapeProperty a sh:PropertyShape ;
+    void:entities "34"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:integer ;
+    sh:minCount 1 ;
+    sh:path dbo:highestRank .
+
+ss:highwaySystemRoadShapeProperty a sh:PropertyShape ;
+    void:entities "21"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:highwaySystem .
+
+ss:homepageCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "4"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path <http://xmlns.com/foaf/0.1/homepage> .
+
+ss:homepageCricketTeamShapeProperty a sh:PropertyShape ;
+    void:entities "261"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path <http://xmlns.com/foaf/0.1/homepage> .
+
+ss:homepageGolfLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "35"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path <http://xmlns.com/foaf/0.1/homepage> .
+
+ss:homepageHockeyTeamShapeProperty a sh:PropertyShape ;
+    void:entities "526"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path <http://xmlns.com/foaf/0.1/homepage> .
+
+ss:homepageHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "1838"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path <http://xmlns.com/foaf/0.1/homepage> .
+
+ss:homepageRacecourseShapeProperty a sh:PropertyShape ;
+    void:entities "124"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path <http://xmlns.com/foaf/0.1/homepage> .
+
+ss:homepageRadioHostShapeProperty a sh:PropertyShape ;
+    void:entities "95"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path <http://xmlns.com/foaf/0.1/homepage> .
+
+ss:homepageShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "916"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path <http://xmlns.com/foaf/0.1/homepage> .
+
+ss:homepageSoftballLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "12"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path <http://xmlns.com/foaf/0.1/homepage> .
+
+ss:homepageSpeedwayLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "7"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path <http://xmlns.com/foaf/0.1/homepage> .
+
+ss:homepageStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "82"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path <http://xmlns.com/foaf/0.1/homepage> .
+
+ss:homeportShipShapeProperty a sh:PropertyShape ;
+    void:entities "69"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:homeport .
+
+ss:hometownDartsPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "76"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:hometown .
+
+ss:imdbIdFootballMatchShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:imdbId .
+
+ss:imdbIdRadioHostShapeProperty a sh:PropertyShape ;
+    void:entities "20"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:imdbId .
+
+ss:imdbIdRoadShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:imdbId .
+
+ss:imdbIdShipShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:imdbId .
+
+ss:imdbIdSnookerChampShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:imdbId .
+
+ss:imdbIdSnookerPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:imdbId .
+
+ss:imdbIdSumoWrestlerShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:imdbId .
+
+ss:incumbentTenureShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:incumbent .
+
+ss:inflowSeaShapeProperty a sh:PropertyShape ;
+    void:entities "3"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:inflow .
+
+ss:instanceTypeAmphibianShapeProperty a sh:PropertyShape ;
+    void:entities "162"^^xsd:int ;
+    sh:in ( dbo:Amphibian ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeComicStripShapeProperty a sh:PropertyShape ;
+    void:entities "254"^^xsd:int ;
+    sh:in ( dbo:ComicStrip ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "2503"^^xsd:int ;
+    sh:in ( dbo:Congressman ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeConiferShapeProperty a sh:PropertyShape ;
+    void:entities "42"^^xsd:int ;
+    sh:in ( dbo:Conifer ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeCricketTeamShapeProperty a sh:PropertyShape ;
+    void:entities "814"^^xsd:int ;
+    sh:in ( dbo:CricketTeam ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeDartsPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "668"^^xsd:int ;
+    sh:in ( dbo:DartsPlayer ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeFernShapeProperty a sh:PropertyShape ;
+    void:entities "61"^^xsd:int ;
+    sh:in ( dbo:Fern ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeFootballMatchShapeProperty a sh:PropertyShape ;
+    void:entities "4234"^^xsd:int ;
+    sh:in ( dbo:FootballMatch ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeGolfLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "37"^^xsd:int ;
+    sh:in ( dbo:GolfLeague ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeHockeyTeamShapeProperty a sh:PropertyShape ;
+    void:entities "2431"^^xsd:int ;
+    sh:in ( dbo:HockeyTeam ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "4750"^^xsd:int ;
+    sh:in ( dbo:Hospital ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeMossShapeProperty a sh:PropertyShape ;
+    void:entities "209"^^xsd:int ;
+    sh:in ( dbo:Moss ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeNetballPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "428"^^xsd:int ;
+    sh:in ( dbo:NetballPlayer ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeRacecourseShapeProperty a sh:PropertyShape ;
+    void:entities "313"^^xsd:int ;
+    sh:in ( dbo:Racecourse ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeRadioHostShapeProperty a sh:PropertyShape ;
+    void:entities "342"^^xsd:int ;
+    sh:in ( dbo:RadioHost ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeRoadJunctionShapeProperty a sh:PropertyShape ;
+    void:entities "252"^^xsd:int ;
+    sh:in ( dbo:RoadJunction ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeRoadShapeProperty a sh:PropertyShape ;
+    void:entities "21235"^^xsd:int ;
+    sh:in ( dbo:Road ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeSeaShapeProperty a sh:PropertyShape ;
+    void:entities "95"^^xsd:int ;
+    sh:in ( dbo:Sea ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeShipShapeProperty a sh:PropertyShape ;
+    void:entities "15708"^^xsd:int ;
+    sh:in ( dbo:Ship ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "2708"^^xsd:int ;
+    sh:in ( dbo:ShoppingMall ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeSnookerChampShapeProperty a sh:PropertyShape ;
+    void:entities "31"^^xsd:int ;
+    sh:in ( dbo:SnookerChamp ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeSnookerPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "417"^^xsd:int ;
+    sh:in ( dbo:SnookerPlayer ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeSnookerWorldRankingShapeProperty a sh:PropertyShape ;
+    void:entities "34"^^xsd:int ;
+    sh:in ( dbo:SnookerWorldRanking ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeSoftballLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "19"^^xsd:int ;
+    sh:in ( dbo:SoftballLeague ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeSpeedwayLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "18"^^xsd:int ;
+    sh:in ( dbo:SpeedwayLeague ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "287"^^xsd:int ;
+    sh:in ( dbo:Stadium ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeSumoWrestlerShapeProperty a sh:PropertyShape ;
+    void:entities "525"^^xsd:int ;
+    sh:in ( dbo:SumoWrestler ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeTennisTournamentShapeProperty a sh:PropertyShape ;
+    void:entities "6962"^^xsd:int ;
+    sh:in ( dbo:TennisTournament ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeTenureShapeProperty a sh:PropertyShape ;
+    void:entities "241280"^^xsd:int ;
+    sh:in ( dbo:Tenure ) ;
+    sh:path rdf:type .
+
+ss:instanceTypeTunnelShapeProperty a sh:PropertyShape ;
+    void:entities "126"^^xsd:int ;
+    sh:in ( dbo:Tunnel ) ;
+    sh:path rdf:type .
+
+ss:isPartOfNameRoadShapeProperty a sh:PropertyShape ;
+    void:entities "569"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:isPartOfName .
+
+ss:isPartOfSeaShapeProperty a sh:PropertyShape ;
+    void:entities "8"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:isPartOf .
+
+ss:islandSeaShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:island .
+
+ss:kingdomAmphibianShapeProperty a sh:PropertyShape ;
+    void:entities "5"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:kingdom .
+
+ss:kingdomConiferShapeProperty a sh:PropertyShape ;
+    void:entities "4"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:kingdom .
+
+ss:kingdomFernShapeProperty a sh:PropertyShape ;
+    void:entities "12"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:kingdom .
+
+ss:kingdomMossShapeProperty a sh:PropertyShape ;
+    void:entities "86"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:kingdom .
+
+ss:knownForShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:knownFor .
+
+ss:labelAmphibianShapeProperty a sh:PropertyShape ;
+    void:entities "162"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:path rdfs:label .
+
+ss:labelComicStripShapeProperty a sh:PropertyShape ;
+    void:entities "240"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path rdfs:label .
+
+ss:labelCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "2501"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path rdfs:label .
+
+ss:labelConiferShapeProperty a sh:PropertyShape ;
+    void:entities "42"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:path rdfs:label .
+
+ss:labelCricketTeamShapeProperty a sh:PropertyShape ;
+    void:entities "812"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path rdfs:label .
+
+ss:labelDartsPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "668"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:path rdfs:label .
+
+ss:labelFernShapeProperty a sh:PropertyShape ;
+    void:entities "61"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:path rdfs:label .
+
+ss:labelFootballMatchShapeProperty a sh:PropertyShape ;
+    void:entities "4218"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path rdfs:label .
+
+ss:labelGolfLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "37"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:path rdfs:label .
+
+ss:labelHockeyTeamShapeProperty a sh:PropertyShape ;
+    void:entities "2431"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:path rdfs:label .
+
+ss:labelHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "4733"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path rdfs:label .
+
+ss:labelMossShapeProperty a sh:PropertyShape ;
+    void:entities "209"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:path rdfs:label .
+
+ss:labelNetballPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "425"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path rdfs:label .
+
+ss:labelRacecourseShapeProperty a sh:PropertyShape ;
+    void:entities "312"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path rdfs:label .
+
+ss:labelRadioHostShapeProperty a sh:PropertyShape ;
+    void:entities "341"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path rdfs:label .
+
+ss:labelRoadJunctionShapeProperty a sh:PropertyShape ;
+    void:entities "247"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path rdfs:label .
+
+ss:labelRoadShapeProperty a sh:PropertyShape ;
+    void:entities "21211"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path rdfs:label .
+
+ss:labelSeaShapeProperty a sh:PropertyShape ;
+    void:entities "95"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:path rdfs:label .
+
+ss:labelShipShapeProperty a sh:PropertyShape ;
+    void:entities "15678"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path rdfs:label .
+
+ss:labelShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "2701"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path rdfs:label .
+
+ss:labelSnookerChampShapeProperty a sh:PropertyShape ;
+    void:entities "31"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:path rdfs:label .
+
+ss:labelSnookerPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "417"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:path rdfs:label .
+
+ss:labelSnookerWorldRankingShapeProperty a sh:PropertyShape ;
+    void:entities "34"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:path rdfs:label .
+
+ss:labelSoftballLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "19"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:path rdfs:label .
+
+ss:labelSpeedwayLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "18"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:path rdfs:label .
+
+ss:labelStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "287"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:path rdfs:label .
+
+ss:labelSumoWrestlerShapeProperty a sh:PropertyShape ;
+    void:entities "525"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:path rdfs:label .
+
+ss:labelTennisTournamentShapeProperty a sh:PropertyShape ;
+    void:entities "6962"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:path rdfs:label .
+
+ss:labelTunnelShapeProperty a sh:PropertyShape ;
+    void:entities "125"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path rdfs:label .
+
+ss:layingDownShipShapeProperty a sh:PropertyShape ;
+    void:entities "5745"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:layingDown .
+
+ss:leaderTenureShapeProperty a sh:PropertyShape ;
+    void:entities "18"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:leader .
+
+ss:leagueHockeyTeamShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:league .
+
+ss:lengthReferenceRoadShapeProperty a sh:PropertyShape ;
+    void:entities "10"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:lengthReference .
+
+ss:lengthRoadShapeProperty a sh:PropertyShape ;
+    void:entities "18150"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:length .
+
+ss:lengthSeaShapeProperty a sh:PropertyShape ;
+    void:entities "28"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:length .
+
+ss:lengthShipShapeProperty a sh:PropertyShape ;
+    void:entities "13881"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:length .
+
+ss:lengthTunnelShapeProperty a sh:PropertyShape ;
+    void:entities "100"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:length .
+
+ss:lieutenantCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:lieutenant .
+
+ss:lieutenantTenureShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:lieutenant .
+
+ss:lineLengthTunnelShapeProperty a sh:PropertyShape ;
+    void:entities "4"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:lineLength .
+
+ss:locationCityHockeyTeamShapeProperty a sh:PropertyShape ;
+    void:entities "4"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:locationCity .
+
+ss:locationFootballMatchShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:location .
+
+ss:locationHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "179"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:location .
+
+ss:locationRacecourseShapeProperty a sh:PropertyShape ;
+    void:entities "24"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:location .
+
+ss:locationRoadJunctionShapeProperty a sh:PropertyShape ;
+    void:entities "21"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:location .
+
+ss:locationRoadShapeProperty a sh:PropertyShape ;
+    void:entities "120"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:location .
+
+ss:locationSeaShapeProperty a sh:PropertyShape ;
+    void:entities "5"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:location .
+
+ss:locationShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "231"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:location .
+
+ss:locationStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "28"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:location .
+
+ss:locationTennisTournamentShapeProperty a sh:PropertyShape ;
+    void:entities "642"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:location .
+
+ss:locationTunnelShapeProperty a sh:PropertyShape ;
+    void:entities "15"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:location .
+
+ss:logoHockeyTeamShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path <http://xmlns.com/foaf/0.1/logo> .
+
+ss:logoHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path <http://xmlns.com/foaf/0.1/logo> .
+
+ss:logoRoadShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path <http://xmlns.com/foaf/0.1/logo> .
+
+ss:maidenVoyageShipShapeProperty a sh:PropertyShape ;
+    void:entities "621"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:maidenVoyage .
+
+ss:maintainedByRoadJunctionShapeProperty a sh:PropertyShape ;
+    void:entities "3"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:maintainedBy .
+
+ss:maintainedByRoadShapeProperty a sh:PropertyShape ;
+    void:entities "3"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:maintainedBy .
+
+ss:managerCricketTeamShapeProperty a sh:PropertyShape ;
+    void:entities "3"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:manager .
+
+ss:managerHockeyTeamShapeProperty a sh:PropertyShape ;
+    void:entities "23"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:manager .
+
+ss:mapRoadShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:map .
+
+ss:maximumDepthSeaShapeProperty a sh:PropertyShape ;
+    void:entities "36"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:maximumDepth .
+
+ss:maximumTemperatureSeaShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:maximumTemperature .
+
+ss:meetingRoadRoadJunctionShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:meetingRoad .
+
+ss:militaryBranchCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "269"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:militaryBranch .
+
+ss:militaryCommandCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "43"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:militaryCommand .
+
+ss:militaryRankCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "5"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:militaryRank .
+
+ss:militaryUnitCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:militaryUnit .
+
+ss:minimumTemperatureSeaShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:minimumTemperature .
+
+ss:ministerTenureShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:minister .
+
+ss:mottoGolfLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:motto .
+
+ss:mottoShipShapeProperty a sh:PropertyShape ;
+    void:entities "295"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:motto .
+
+ss:mottoSoftballLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:motto .
+
+ss:mottoSpeedwayLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:motto .
+
+ss:nameAmphibianShapeProperty a sh:PropertyShape ;
+    void:entities "139"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameComicStripShapeProperty a sh:PropertyShape ;
+    void:entities "7"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "2251"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameConiferShapeProperty a sh:PropertyShape ;
+    void:entities "24"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameCricketTeamShapeProperty a sh:PropertyShape ;
+    void:entities "712"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameDartsPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "668"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameFernShapeProperty a sh:PropertyShape ;
+    void:entities "41"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameFootballMatchShapeProperty a sh:PropertyShape ;
+    void:entities "3927"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameHockeyTeamShapeProperty a sh:PropertyShape ;
+    void:entities "61"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "3118"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameMossShapeProperty a sh:PropertyShape ;
+    void:entities "140"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameNetballPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "426"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameRacecourseShapeProperty a sh:PropertyShape ;
+    void:entities "172"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameRadioHostShapeProperty a sh:PropertyShape ;
+    void:entities "328"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameRoadJunctionShapeProperty a sh:PropertyShape ;
+    void:entities "251"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameRoadShapeProperty a sh:PropertyShape ;
+    void:entities "7919"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameSeaShapeProperty a sh:PropertyShape ;
+    void:entities "94"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameShipShapeProperty a sh:PropertyShape ;
+    void:entities "11645"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "37"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameSnookerChampShapeProperty a sh:PropertyShape ;
+    void:entities "30"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameSnookerPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "417"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameSnookerWorldRankingShapeProperty a sh:PropertyShape ;
+    void:entities "34"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "277"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameSumoWrestlerShapeProperty a sh:PropertyShape ;
+    void:entities "525"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameTennisTournamentShapeProperty a sh:PropertyShape ;
+    void:entities "29"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:nameTunnelShapeProperty a sh:PropertyShape ;
+    void:entities "120"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/name> .
+
+ss:name_1RacecourseShapeProperty a sh:PropertyShape ;
+    void:entities "136"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path dbo:name .
+
+ss:namedAfterSeaShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:namedAfter .
+
+ss:nationalityCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "75"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:nationality .
+
+ss:nearestCitySeaShapeProperty a sh:PropertyShape ;
+    void:entities "9"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:nearestCity .
+
+ss:nickCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "5"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/nick> .
+
+ss:nickShipShapeProperty a sh:PropertyShape ;
+    void:entities "183"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/nick> .
+
+ss:nickStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "58"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/nick> .
+
+ss:nickSumoWrestlerShapeProperty a sh:PropertyShape ;
+    void:entities "7"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path <http://xmlns.com/foaf/0.1/nick> .
+
+ss:nomineeTenureShapeProperty a sh:PropertyShape ;
+    void:entities "7"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:nominee .
+
+ss:nrhpReferenceNumberHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "4"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:nrhpReferenceNumber .
+
+ss:nrhpReferenceNumberStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:nrhpReferenceNumber .
+
+ss:numberOfGoalsFootballMatchShapeProperty a sh:PropertyShape ;
+    void:entities "25"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:integer ;
+    sh:path dbo:numberOfGoals .
+
+ss:numberOfParkingSpacesShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "14"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:nonNegativeInteger ;
+    sh:path dbo:numberOfParkingSpaces .
+
+ss:numberOfRestaurantsShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:nonNegativeInteger ;
+    sh:path dbo:numberOfRestaurants .
+
+ss:numberOfRoomsShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:nonNegativeInteger ;
+    sh:path dbo:numberOfRooms .
+
+ss:numberOfStoresShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "31"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:nonNegativeInteger ;
+    sh:path dbo:numberOfStores .
+
+ss:numberOfSuitesStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "14"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:nonNegativeInteger ;
+    sh:path dbo:numberOfSuites .
+
+ss:occupationCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "57"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:occupation .
+
+ss:occupationNetballPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:occupation .
+
+ss:officeCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "1029"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:office .
+
+ss:officeTenureShapeProperty a sh:PropertyShape ;
+    void:entities "170313"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:office .
+
+ss:openingDateHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "251"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:openingDate .
+
+ss:openingDateRoadShapeProperty a sh:PropertyShape ;
+    void:entities "975"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:openingDate .
+
+ss:openingDateShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "1016"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:openingDate .
+
+ss:openingDateStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "75"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:openingDate .
+
+ss:openingYearHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "2711"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:path dbo:openingYear .
+
+ss:openingYearRoadJunctionShapeProperty a sh:PropertyShape ;
+    void:entities "112"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:path dbo:openingYear .
+
+ss:operatorShipShapeProperty a sh:PropertyShape ;
+    void:entities "11"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:operator .
+
+ss:operatorStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "13"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:operator .
+
+ss:operatorTunnelShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:operator .
+
+ss:orderAmphibianShapeProperty a sh:PropertyShape ;
+    void:entities "112"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:order .
+
+ss:orderConiferShapeProperty a sh:PropertyShape ;
+    void:entities "5"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:order .
+
+ss:orderDateShipShapeProperty a sh:PropertyShape ;
+    void:entities "2269"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:orderDate .
+
+ss:orderFernShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:order .
+
+ss:orderInOfficeCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "283"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:orderInOffice .
+
+ss:orderMossShapeProperty a sh:PropertyShape ;
+    void:entities "70"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:order .
+
+ss:originalNameHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path dbo:originalName .
+
+ss:originalNameSeaShapeProperty a sh:PropertyShape ;
+    void:entities "12"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path dbo:originalName .
+
+ss:originalNameShipShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path dbo:originalName .
+
+ss:originalNameShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path dbo:originalName .
+
+ss:originalNameStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "51"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path dbo:originalName .
+
+ss:otherPartyCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "12"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:otherParty .
+
+ss:otherWinsSnookerChampShapeProperty a sh:PropertyShape ;
+    void:entities "18"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:nonNegativeInteger ;
+    sh:path dbo:otherWins .
+
+ss:otherWinsSnookerPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "90"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:nonNegativeInteger ;
+    sh:path dbo:otherWins .
+
+ss:outflowSeaShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:outflow .
+
+ss:ownerCricketTeamShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:owner .
+
+ss:ownerHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "17"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:owner .
+
+ss:ownerRacecourseShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:owner .
+
+ss:ownerShipShapeProperty a sh:PropertyShape ;
+    void:entities "15"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:owner .
+
+ss:ownerShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "7"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:owner .
+
+ss:ownerStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "24"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:owner .
+
+ss:ownerTunnelShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:owner .
+
+ss:participantGolfLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "19"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:participant .
+
+ss:participantSoftballLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "17"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:participant .
+
+ss:participantSpeedwayLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "11"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:participant .
+
+ss:partyCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:party .
+
+ss:partyTenureShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:party .
+
+ss:phylumAmphibianShapeProperty a sh:PropertyShape ;
+    void:entities "29"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:phylum .
+
+ss:pictureRoadJunctionShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:picture .
+
+ss:pictureRoadShapeProperty a sh:PropertyShape ;
+    void:entities "7"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:picture .
+
+ss:pictureTunnelShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:picture .
+
+ss:populationTotalShipShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:nonNegativeInteger ;
+    sh:path dbo:populationTotal .
+
+ss:positionNetballPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:position .
+
+ss:postalCodeRoadShapeProperty a sh:PropertyShape ;
+    void:entities "628"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:postalCode .
+
+ss:powerTypeShipShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:powerType .
+
+ss:predecessorTenureShapeProperty a sh:PropertyShape ;
+    void:entities "1132"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:predecessor .
+
+ss:presidentCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "22"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:president .
+
+ss:presidentTenureShapeProperty a sh:PropertyShape ;
+    void:entities "26"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:president .
+
+ss:previousEventFootballMatchShapeProperty a sh:PropertyShape ;
+    void:entities "16"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:previousEvent .
+
+ss:previousInfrastructureRoadShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:previousInfrastructure .
+
+ss:primeMinisterTenureShapeProperty a sh:PropertyShape ;
+    void:entities "1779"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:primeMinister .
+
+ss:professionCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:profession .
+
+ss:publisherComicStripShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:publisher .
+
+ss:quoteSeaShapeProperty a sh:PropertyShape ;
+    void:entities "4"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:quote .
+
+ss:rankingWinsSnookerChampShapeProperty a sh:PropertyShape ;
+    void:entities "17"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:nonNegativeInteger ;
+    sh:path dbo:rankingWins .
+
+ss:rankingWinsSnookerPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "32"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:nonNegativeInteger ;
+    sh:path dbo:rankingWins .
+
+ss:rebuildingDateStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "4"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:rebuildingDate .
+
+ss:rebuildingYearTunnelShapeProperty a sh:PropertyShape ;
+    void:entities "3"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:path dbo:rebuildingYear .
+
+ss:recommissioningDateShipShapeProperty a sh:PropertyShape ;
+    void:entities "178"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:recommissioningDate .
+
+ss:regionCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:region .
+
+ss:regionHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "79"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:region .
+
+ss:relationCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:relation .
+
+ss:relativeNetballPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:relative .
+
+ss:religionCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "81"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:religion .
+
+ss:residenceCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "14"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:residence .
+
+ss:restingPlaceCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "18"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:restingPlace .
+
+ss:routeEndDirectionRoadShapeProperty a sh:PropertyShape ;
+    void:entities "16538"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:routeEndDirection .
+
+ss:routeEndLocationTunnelShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:routeEndLocation .
+
+ss:routeEndRoadShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:routeEnd .
+
+ss:routeJunctionRoadShapeProperty a sh:PropertyShape ;
+    void:entities "175"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:routeJunction .
+
+ss:routeNumberRoadShapeProperty a sh:PropertyShape ;
+    void:entities "17274"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:routeNumber .
+
+ss:routeStartDirectionRoadShapeProperty a sh:PropertyShape ;
+    void:entities "16618"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:routeStartDirection .
+
+ss:routeStartLocationTunnelShapeProperty a sh:PropertyShape ;
+    void:entities "3"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:routeStartLocation .
+
+ss:routeStartRoadShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:routeStart .
+
+ss:routeTypeAbbreviationRoadShapeProperty a sh:PropertyShape ;
+    void:entities "17495"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:routeTypeAbbreviation .
+
+ss:runningMateTenureShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:runningMate .
+
+ss:ruralMunicipalityRoadShapeProperty a sh:PropertyShape ;
+    void:entities "231"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:ruralMunicipality .
+
+ss:sameAsCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "6"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path owl:sameAs .
+
+ss:sameAsFernShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path owl:sameAs .
+
+ss:sameAsFootballMatchShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path owl:sameAs .
+
+ss:sameAsHockeyTeamShapeProperty a sh:PropertyShape ;
+    void:entities "5"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path owl:sameAs .
+
+ss:sameAsHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "28"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path owl:sameAs .
+
+ss:sameAsMossShapeProperty a sh:PropertyShape ;
+    void:entities "7"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path owl:sameAs .
+
+ss:sameAsRacecourseShapeProperty a sh:PropertyShape ;
+    void:entities "3"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path owl:sameAs .
+
+ss:sameAsRadioHostShapeProperty a sh:PropertyShape ;
+    void:entities "3"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path owl:sameAs .
+
+ss:sameAsRoadShapeProperty a sh:PropertyShape ;
+    void:entities "218"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path owl:sameAs .
+
+ss:sameAsSeaShapeProperty a sh:PropertyShape ;
+    void:entities "5"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path owl:sameAs .
+
+ss:sameAsShipShapeProperty a sh:PropertyShape ;
+    void:entities "76"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path owl:sameAs .
+
+ss:sameAsShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "28"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path owl:sameAs .
+
+ss:sameAsSpeedwayLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path owl:sameAs .
+
+ss:sameAsStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "3"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path owl:sameAs .
+
+ss:sameAsTennisTournamentShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path owl:sameAs .
+
+ss:schoolNetballPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:school .
+
+ss:seatingCapacityStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "190"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:nonNegativeInteger ;
+    sh:path dbo:seatingCapacity .
+
+ss:seeAlsoCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "5"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path rdfs:seeAlso .
+
+ss:seeAlsoCricketTeamShapeProperty a sh:PropertyShape ;
+    void:entities "8"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path rdfs:seeAlso .
+
+ss:seeAlsoDartsPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "10"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path rdfs:seeAlso .
+
+ss:seeAlsoFootballMatchShapeProperty a sh:PropertyShape ;
+    void:entities "214"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path rdfs:seeAlso .
+
+ss:seeAlsoGolfLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path rdfs:seeAlso .
+
+ss:seeAlsoHockeyTeamShapeProperty a sh:PropertyShape ;
+    void:entities "8"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path rdfs:seeAlso .
+
+ss:seeAlsoHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path rdfs:seeAlso .
+
+ss:seeAlsoRacecourseShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path rdfs:seeAlso .
+
+ss:seeAlsoRadioHostShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path rdfs:seeAlso .
+
+ss:seeAlsoRoadJunctionShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path rdfs:seeAlso .
+
+ss:seeAlsoRoadShapeProperty a sh:PropertyShape ;
+    void:entities "64"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path rdfs:seeAlso .
+
+ss:seeAlsoSeaShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path rdfs:seeAlso .
+
+ss:seeAlsoShipShapeProperty a sh:PropertyShape ;
+    void:entities "3"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path rdfs:seeAlso .
+
+ss:seeAlsoShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path rdfs:seeAlso .
+
+ss:seeAlsoSnookerChampShapeProperty a sh:PropertyShape ;
+    void:entities "4"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path rdfs:seeAlso .
+
+ss:seeAlsoSnookerPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path rdfs:seeAlso .
+
+ss:seeAlsoSoftballLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path rdfs:seeAlso .
+
+ss:seeAlsoStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path rdfs:seeAlso .
+
+ss:seeAlsoTennisTournamentShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path rdfs:seeAlso .
+
+ss:seniorityTenureShapeProperty a sh:PropertyShape ;
+    void:entities "1234"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:seniority .
+
+ss:serviceEndYearCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "231"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:path dbo:serviceEndYear .
+
+ss:serviceStartYearCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "241"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:path dbo:serviceStartYear .
+
+ss:shipBeamShipShapeProperty a sh:PropertyShape ;
+    void:entities "13495"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:shipBeam .
+
+ss:shipDisplacementShipShapeProperty a sh:PropertyShape ;
+    void:entities "2621"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:shipDisplacement .
+
+ss:shipDraftShipShapeProperty a sh:PropertyShape ;
+    void:entities "4794"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:shipDraft .
+
+ss:shipLaunchShipShapeProperty a sh:PropertyShape ;
+    void:entities "8859"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:shipLaunch .
+
+ss:shoreLengthSeaShapeProperty a sh:PropertyShape ;
+    void:entities "3"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:shoreLength .
+
+ss:speakerTenureShapeProperty a sh:PropertyShape ;
+    void:entities "32"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:integer ;
+    sh:path dbo:speaker .
+
+ss:speciesConiferShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path dbo:species .
+
+ss:speciesFernShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path dbo:species .
+
+ss:sportCountrySnookerChampShapeProperty a sh:PropertyShape ;
+    void:entities "5"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:sportCountry .
+
+ss:sportCountrySnookerPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "172"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:sportCountry .
+
+ss:sportCountrySnookerWorldRankingShapeProperty a sh:PropertyShape ;
+    void:entities "12"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:sportCountry .
+
+ss:spouseCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "7"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:spouse .
+
+ss:spouseNetballPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:spouse .
+
+ss:spurOfRoadShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path dbo:spurOf .
+
+ss:stadiumHockeyTeamShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:stadium .
+
+ss:startDateTennisTournamentShapeProperty a sh:PropertyShape ;
+    void:entities "83"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:startDate .
+
+ss:startTenureShapeProperty a sh:PropertyShape ;
+    void:entities "160739"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:date ;
+    sh:path dbo:start .
+
+ss:stateHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "13"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:state .
+
+ss:stateRoadShapeProperty a sh:PropertyShape ;
+    void:entities "7"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:state .
+
+ss:stateTenureShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:state .
+
+ss:statusHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:status .
+
+ss:statusShipShapeProperty a sh:PropertyShape ;
+    void:entities "11052"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:status .
+
+ss:statusShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "11"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:status .
+
+ss:statusTunnelShapeProperty a sh:PropertyShape ;
+    void:entities "56"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:status .
+
+ss:subdivisionShipShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:subdivision .
+
+ss:subsequentInfrastructureRoadShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:subsequentInfrastructure .
+
+ss:successorCongressmanShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:successor .
+
+ss:successorTenureShapeProperty a sh:PropertyShape ;
+    void:entities "961"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:successor .
+
+ss:synonymAmphibianShapeProperty a sh:PropertyShape ;
+    void:entities "11"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:synonym .
+
+ss:synonymConiferShapeProperty a sh:PropertyShape ;
+    void:entities "5"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:synonym .
+
+ss:synonymFernShapeProperty a sh:PropertyShape ;
+    void:entities "17"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:synonym .
+
+ss:synonymMossShapeProperty a sh:PropertyShape ;
+    void:entities "46"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:synonym .
+
+ss:taoiseachTenureShapeProperty a sh:PropertyShape ;
+    void:entities "37"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:taoiseach .
+
+ss:teamFootballMatchShapeProperty a sh:PropertyShape ;
+    void:entities "11"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:team .
+
+ss:tenantStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:tenant .
+
+ss:tennisSurfaceTypeTennisTournamentShapeProperty a sh:PropertyShape ;
+    void:entities "5864"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:tennisSurfaceType .
+
+ss:timeFootballMatchShapeProperty a sh:PropertyShape ;
+    void:entities "98"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:time .
+
+ss:timeZoneShipShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path dbo:timeZone .
+
+ss:titleCricketTeamShapeProperty a sh:PropertyShape ;
+    void:entities "269"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path dbo:title .
+
+ss:titleGolfLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "37"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:path dbo:title .
+
+ss:titleSoftballLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "9"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path dbo:title .
+
+ss:titleSpeedwayLeagueShapeProperty a sh:PropertyShape ;
+    void:entities "6"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path dbo:title .
+
+ss:titleTenureShapeProperty a sh:PropertyShape ;
+    void:entities "5329"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:path dbo:title .
+
+ss:topSpeedShipShapeProperty a sh:PropertyShape ;
+    void:entities "10505"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:topSpeed .
+
+ss:trainerSumoWrestlerShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:trainer .
+
+ss:typeHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:path dbo:type .
+
+ss:typeRoadJunctionShapeProperty a sh:PropertyShape ;
+    void:entities "3"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:type .
+
+ss:typeRoadShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:type .
+
+ss:typeSeaShapeProperty a sh:PropertyShape ;
+    void:entities "13"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:type .
+
+ss:typeShipShapeProperty a sh:PropertyShape ;
+    void:entities "19"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:type .
+
+ss:typeShoppingMallShapeProperty a sh:PropertyShape ;
+    void:entities "2"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:type .
+
+ss:typeStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:type .
+
+ss:universityNetballPlayerShapeProperty a sh:PropertyShape ;
+    void:entities "73"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:university .
+
+ss:utcOffsetShipShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:path dbo:utcOffset .
+
+ss:viceLeaderTenureShapeProperty a sh:PropertyShape ;
+    void:entities "12"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:viceLeader .
+
+ss:vicePresidentTenureShapeProperty a sh:PropertyShape ;
+    void:entities "6"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:vicePresident .
+
+ss:vicePrimeMinisterTenureShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:vicePrimeMinister .
+
+ss:volumeSeaShapeProperty a sh:PropertyShape ;
+    void:entities "19"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:volume .
+
+ss:weightSumoWrestlerShapeProperty a sh:PropertyShape ;
+    void:entities "7"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:weight .
+
+ss:widthSeaShapeProperty a sh:PropertyShape ;
+    void:entities "23"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:width .
+
+ss:widthTunnelShapeProperty a sh:PropertyShape ;
+    void:entities "15"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:double ;
+    sh:path dbo:width .
+
+ss:worldChampionTitleYearSnookerChampShapeProperty a sh:PropertyShape ;
+    void:entities "31"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:path dbo:worldChampionTitleYear .
+
+ss:writerComicStripShapeProperty a sh:PropertyShape ;
+    void:entities "3"^^xsd:int ;
+    sh:NodeKind sh:IRI ;
+    sh:path dbo:writer .
+
+ss:yearOfConstructionHospitalShapeProperty a sh:PropertyShape ;
+    void:entities "4"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:path dbo:yearOfConstruction .
+
+ss:yearOfConstructionRoadJunctionShapeProperty a sh:PropertyShape ;
+    void:entities "48"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:path dbo:yearOfConstruction .
+
+ss:yearOfConstructionStadiumShapeProperty a sh:PropertyShape ;
+    void:entities "1"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:path dbo:yearOfConstruction .
+
+ss:yearOfConstructionTunnelShapeProperty a sh:PropertyShape ;
+    void:entities "7"^^xsd:int ;
+    sh:NodeKind sh:Literal ;
+    sh:datatype xsd:gYear ;
+    sh:path dbo:yearOfConstruction .
+
