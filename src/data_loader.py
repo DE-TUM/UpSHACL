@@ -8,12 +8,11 @@ The module contains **no heavy business logic**, only I/O with Virtuoso.
 """
 
 from pathlib import Path
-from subprocess import run, CalledProcessError
-from typing import Iterable, List, Optional
+from subprocess import run
 import os
 import time
 
-from rdflib import Graph, URIRef
+from rdflib import Graph
 from SPARQLWrapper.SPARQLExceptions import EndPointInternalError
 
 from src.config import (
@@ -22,8 +21,7 @@ from src.config import (
     virtuoso,
     MAX_BATCH_SIZE,
 )
-from src.utils.sanitizer import sanitize_uri, sanitize_graph
-from .graph_ops import batch  # single source of truth for batching
+from src.utils.sanitizer import sanitize_graph
 
 # ---------------------------------------------------------------------------
 # Loader helper – wait until Virtuoso rdf_loader finishes
