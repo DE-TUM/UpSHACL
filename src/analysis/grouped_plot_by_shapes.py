@@ -5,11 +5,20 @@ import os
 # === Group mapping ===
 groups = {
     "group1": [
-        ("csv file", "dataset name"),
+        ("EnDe50_shapes30.csv",   "DB50, Shapes30"),
+        ("EnDe100_shapes30.csv",  "DB100, Shapes30"),
+        ("EnDe1000_shapes30.csv", "DB1000, Shapes30"),
+        ("skg1_schema1.csv",      "SKG1, schema1"),
+        ("skg1_schema2.csv",      "SKG1, schema2"),
+        ("skg1_schema3.csv",      "SKG1, schema3"),
     ],
     "group2": [
-        ("csv file", "dataset name"),
-
+        ("mkg1_schema1.csv", "MKG1, schema1"),
+        ("mkg1_schema2.csv", "MKG1, schema2"),
+        ("mkg1_schema3.csv", "MKG1, schema3"),
+        ("lkg1_schema1.csv", "LKG1, schema1"),
+        ("lkg1_schema2.csv", "LKG1, schema2"),
+        ("lkg1_schema3.csv", "LKG1, schema3"),
     ]
 }
 
@@ -64,17 +73,17 @@ def group_by_shape():
     shape_groups = defaultdict(list)
     for group_entries in groups.values():
         for csv_file, label in group_entries:
-            if "name4" in label:
-                shape_key = "name4"
+            if "Shapes30" in label:
+                shape_key = "Shapes30"
                 data_label = label.split(",")[0].strip()
-            elif "name1" in label:
-                shape_key = "name1"
+            elif "schema1" in label:
+                shape_key = "schema1"
                 data_label = label.split(",")[0].strip()
-            elif "name2" in label:
-                shape_key = "name2"
+            elif "schema2" in label:
+                shape_key = "schema2"
                 data_label = label.split(",")[0].strip()
-            elif "name3" in label:
-                shape_key = "name3"
+            elif "schema3" in label:
+                shape_key = "schema3"
                 data_label = label.split(",")[0].strip()
             else:
                 continue
@@ -98,7 +107,7 @@ def plot_all_shapes_in_row(shape_groups, y_limits):
     legend_handles = []
     legend_labels = []
 
-    for ax, shape_key in zip(axes, ["name1", "name2", "name3", "name4"]):
+    for ax, shape_key in zip(axes, ["schema1", "schema2", "schema3", "Shapes30"]):
         datasets = shape_groups[shape_key]
         avg_dfs = []
         data_labels = []
@@ -218,7 +227,7 @@ def plot_group_by_shape(shape_key, datasets, y_limits):
     print("Saved:", filename)
 
 # === Run plotting for all shape groups in your preferred order ===
-ordered_shape_keys = ["name1", "name2", "name3", "name4"]
+ordered_shape_keys = ["schema1", "schema2", "schema3", "Shapes30"]
 shape_groups = group_by_shape()
 plot_all_shapes_in_row(shape_groups, global_limits)
 

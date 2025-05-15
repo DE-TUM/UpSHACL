@@ -50,72 +50,6 @@ def load_graph_from_file(file_path: str) -> Graph:
     return Graph().parse(file_path, format="turtle")
 
 
-# def load_graph_from_virtuoso(graph_uri: str) -> Graph:
-#     from rdflib import Graph
-#     from .sanitizer import sanitize_rdfxml_text
-#
-#     g = Graph()
-#
-#     # Step 1: Get all subjects
-#     select_query = f"""
-#     SELECT DISTINCT ?s
-#     WHERE {{ GRAPH <{graph_uri}> {{ ?s ?p ?o }} }}
-#     """
-#     results = virtuoso.query_select(select_query)
-#     subjects = [row['s']['value'] for row in results.get("results", {}).get("bindings", [])]
-#
-#     print(f"Found {len(subjects)} distinct subjects in <{graph_uri}>")
-#
-#     # Step 2: Split into safe-size batches
-#     for i in range(0, len(subjects), MAX_BATCH_SIZE):
-#         subject_batch = subjects[i:i + MAX_BATCH_SIZE]
-#
-#         # ✅ INLINE the URIs directly — NO variables, NO ?s0 etc.
-#         values_clause = " ".join(f"<{subj}>" for subj in subject_batch)
-#         construct_query = f"""
-#         CONSTRUCT {{ ?s ?p ?o }}
-#         WHERE {{
-#             GRAPH <{graph_uri}> {{
-#                 VALUES ?s {{ {values_clause} }}
-#                 ?s ?p ?o
-#             }}
-#         }}
-#         """
-#
-#         try:
-#             result = virtuoso.query(construct_query)
-#             if result:
-#                 try:
-#                     text = result.decode("utf-8")
-#                 except UnicodeDecodeError:
-#                     text = result.decode("iso-8859-1")
-#
-#                 # Sanitize RDF/XML before parsing (fix bad URIs, etc.)
-#                 # text = sanitize_rdfxml_text(text)
-#
-#                 batch_graph = Graph()
-#                 try:
-#                     batch_graph.parse(data=text, format="turtle")
-#                 except Exception as parse_error:
-#                     print(f"RDF/XML parsing failed: {parse_error}")
-#                     try:
-#                         batch_graph.parse(data=text, format="n3")
-#                     except Exception as fallback_error:
-#                         print(f"N-Triples fallback also failed: {fallback_error}")
-#                         with open(f"problematic_batch_{i // MAX_BATCH_SIZE}.txt", "w", encoding="utf-8") as f:
-#                             f.write(text)
-#                         continue
-#
-#                 batch_graph = sanitize_graph(batch_graph)
-#                 g += batch_graph
-#                 print(f"Batch {i // MAX_BATCH_SIZE + 1}: +{len(batch_graph)} triples")
-#
-#         except Exception as e:
-#             print(f"Failed to load batch {i // MAX_BATCH_SIZE + 1}: {e}")
-#
-#     print(f"Final graph size: {len(g)} triples")
-#     return g
-
 
 from rdflib import URIRef
 
@@ -256,36 +190,36 @@ def run_incremental_pipeline(
     inserted = inserted_all[batch_index * batch_size:(batch_index + 1) * batch_size]
     deleted = deleted_all[batch_index * batch_size:(batch_index + 1) * batch_size]
 
-    # @timed_step("Load data graph from file + apply deltas", timings)
-    # def reconstruct_full_graph():
-    #     print("Reconstructing full RDFLib graph from file + deltas (safe method)...")
-    #
-    #     # Step 1: Parse initial graph and extract triples
-    #     base_graph = Graph().parse(data_file, format="turtle")
-    #     triple_set = set(base_graph)
-    #     del base_graph  # free memory
-    #
-    #     # Step 2: Apply deletions up to batch i
-    #     for i in range(batch_index + 1):
-    #         del_slice = deleted_all[i * batch_size:(i + 1) * batch_size]
-    #         for s, p, o in del_slice:
-    #             triple_set.discard(materialize_triple(s, p, *o))
-    #
-    #     # Step 3: Apply insertions up to batch i
-    #     for i in range(batch_index + 1):
-    #         ins_slice = inserted_all[i * batch_size:(i + 1) * batch_size]
-    #         for s, p, o in ins_slice:
-    #             triple_set.add(materialize_triple(s, p, *o))
-    #
-    #     # Step 4: Construct RDFLib Graph from final triple set
-    #     g_final = Graph()
-    #     for triple in triple_set:
-    #         g_final.add(triple)
-    #
-    #     print(f"Finished reconstruction: {len(g_final)} triples")
-    #     return g_final
-    #
-    # g = reconstruct_full_graph()
+    @timed_step("Load data graph from file + apply deltas", timings)
+    def reconstruct_full_graph():
+        print("Reconstructing full RDFLib graph from file + deltas (safe method)...")
+
+        # Step 1: Parse initial graph and extract triples
+        base_graph = Graph().parse(data_file, format="turtle")
+        triple_set = set(base_graph)
+        del base_graph  # free memory
+
+        # Step 2: Apply deletions up to batch i
+        for i in range(batch_index + 1):
+            del_slice = deleted_all[i * batch_size:(i + 1) * batch_size]
+            for s, p, o in del_slice:
+                triple_set.discard(materialize_triple(s, p, *o))
+
+        # Step 3: Apply insertions up to batch i
+        for i in range(batch_index + 1):
+            ins_slice = inserted_all[i * batch_size:(i + 1) * batch_size]
+            for s, p, o in ins_slice:
+                triple_set.add(materialize_triple(s, p, *o))
+
+        # Step 4: Construct RDFLib Graph from final triple set
+        g_final = Graph()
+        for triple in triple_set:
+            g_final.add(triple)
+
+        print(f"Finished reconstruction: {len(g_final)} triples")
+        return g_final
+
+    g = reconstruct_full_graph()
 
     insert_triples = build_sparql_triples(inserted)
     delete_triples = build_sparql_triples(deleted)
@@ -330,19 +264,19 @@ def run_incremental_pipeline(
         print("Reduced graph is empty. Skipping SHACL validation.")
         return
     #
-    # @timed_step("Full validation", timings)
-    # def step_full_validation():
-    #     return validate(data_graph=g, shacl_graph=full_shapes_graph,
-    #                     inference='none', abort_on_first=False, meta_shacl=False,
-    #                     advanced=False, debug=False)
+    @timed_step("Full validation", timings)
+    def step_full_validation():
+        return validate(data_graph=g, shacl_graph=full_shapes_graph,
+                        inference='none', abort_on_first=False, meta_shacl=False,
+                        advanced=False, debug=False)
 
-    # conforms_full, full_results_graph, _ = step_full_validation()
-    # fg_path = make_validation_report_path(data_file, batch_i=batch_index, kind="fg")
-    # sanitize_graph(full_results_graph).serialize(destination=fg_path, format="turtle")
+    conforms_full, full_results_graph, _ = step_full_validation()
+    fg_path = make_validation_report_path(data_file, batch_i=batch_index, kind="fg")
+    sanitize_graph(full_results_graph).serialize(destination=fg_path, format="turtle")
 
-    # del g
-    # import gc
-    # gc.collect()
+    del g
+    import gc
+    gc.collect()
 
     @timed_step("Reduced validation", timings)
     def step_reduced_validation():
@@ -355,23 +289,6 @@ def run_incremental_pipeline(
     sanitize_graph(reduced_results_graph).serialize(destination=rg_path, format="turtle")
     print(f"Exported reduced violation report to: {rg_path}")
 
-    # @timed_step("Violation comparison", timings)
-    # def step_compare():
-    #     full_violations = extract_violations(full_results_graph)
-    #     reduced_violations = extract_violations(reduced_results_graph)
-    #     filtered_full_violations = filter_violations(full_violations, affected_pairs)
-    #     return {
-    #         "full": full_violations,
-    #         "filtered": filtered_full_violations,
-    #         "reduced": reduced_violations,
-    #         "missing": filtered_full_violations - reduced_violations,
-    #         "extra": reduced_violations - filtered_full_violations,
-    #     }
-    #
-    # violations = step_compare()
-    # print("\nExtra Violations:")
-    # for v in violations["extra"]:
-    #     print(f"  focusNode={v[0]} | shape={v[1]} | path={v[2]}")
 
     @timed_step("Export CSV", timings)
     def step_export_csv():
@@ -387,11 +304,6 @@ def run_incremental_pipeline(
                 "reduced_data_triples": reduced_data_triples,
                 "full_shapes_triples": full_shapes_triples,
                 "reduced_shapes_triples": 0,
-                # "full_violations_count": len(violations["full"]),
-                # "filtered_full_violations_count": len(violations["filtered"]),
-                # "reduced_violations_count": len(violations["reduced"]),
-                # "missing_violations_count": len(violations["missing"]),
-                # "extra_violations_count": len(violations["extra"]),
                 "speedup_factor": round((timings.get("Load data graph from file + apply deltas", 0) +
                                           timings.get("Load shapes file", 0) +
                                           timings.get("Full validation", 0)) /
@@ -405,13 +317,8 @@ def run_incremental_pipeline(
 
     step_export_csv()
     cleanup_temp_graphs()
-    # del g, full_results_graph, reduced_results_graph
-    # gc.collect()
 
     print("Pipeline complete.")
-
-
-
 
 def export_full_validation_report(data_file, shapes_file, output_path: str):
     from pyshacl import validate

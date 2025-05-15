@@ -74,11 +74,6 @@ experiments: List[tuple[str, str, str]] = [
     ("data/lubm-lkg-1.ttl", "data/schema3.ttl", "results/lkg1_schema3.csv"),
 ]
 
-# # --- TEMP: run only one experiment while debugging -------------------------
-# experiments = [
-#     ("data/EnDe-Lite50(without_Ontology).ttl", "data/shape30_clean.ttl", "results/EnDe50.csv"),
-# ]
-
 # result paths --------------------------------------------------------------
 master_log_file = "results/master_results.csv"
 log_output_file = "results/full_log.txt"

@@ -8,14 +8,22 @@ from matplotlib.ticker import LogLocator
 # === Group mapping ===
 groups = {
     "group1": [
-        ("csv file", "dataset name"),
+        ("skg1_schema1.csv", "SKG1, schema1"),
+        ("mkg1_schema1.csv", "MKG1, schema1"),
+        ("lkg1_schema1.csv", "LKG1, schema1"),
+        ("skg1_schema2.csv", "SKG1, schema2"),
+        ("mkg1_schema2.csv", "MKG1, schema2"),
+        ("lkg1_schema2.csv", "LKG1, schema2"),
     ],
     "group2": [
-        ("csv file", "dataset name"),
-
+        ("skg1_schema3.csv", "SKG1, schema3"),
+        ("mkg1_schema3.csv", "MKG1, schema3"),
+        ("lkg1_schema3.csv", "LKG1, schema3"),
+        ("EnDe50_shapes30.csv", "DB50, Shapes30"),
+        ("EnDe100_shapes30.csv", "DB100, Shapes30"),
+        ("EnDe1000_shapes30.csv", "DB1000, Shapes30"),
     ]
 }
-
 
 
 # === Shared constants ===
@@ -76,24 +84,24 @@ def plot_all_shapes_grouped(group_entries, y_limits, output_path):
 
     plt.style.use('seaborn-v0_8-muted')
 
-    # === Group by shape key (e.g., name1, name2, etc.)
+    # === Group by shape key (e.g., schema1, schema2, etc.)
     grouped = defaultdict(list)
     for csv_file, label in group_entries:
-        if "name4" in label:
-            shape_key = "name4"
-        elif "name1" in label:
-            shape_key = "name1"
-        elif "name2" in label:
-            shape_key = "name2"
-        elif "name3" in label:
-            shape_key = "name3"
+        if "Shapes30" in label:
+            shape_key = "Shapes30"
+        elif "schema1" in label:
+            shape_key = "schema1"
+        elif "schema2" in label:
+            shape_key = "schema2"
+        elif "schema3" in label:
+            shape_key = "schema3"
         else:
             continue
         data_label = label.split(",")[0].strip()
         grouped[shape_key].append((data_label, csv_file))
 
     # === Sort keys for consistent subplot layout
-    shape_keys = ["name1", "name2", "name3", "name4"]
+    shape_keys = ["schema1", "schema2", "schema3", "Shapes30"]
     num_shapes = len(shape_keys)
     fig, axes = plt.subplots(1, num_shapes, figsize=(5 * num_shapes, 6), sharey=True)
 
