@@ -17,17 +17,17 @@ from typing import Dict, List, Set, Tuple
 import collections
 import uuid
 
-from rdflib.term import URIRef  # only for type hints
-
+from typing import List, Set, Tuple, Dict, Optional, Union
 from ..config import NODE_BATCH_SIZE, virtuoso
 from ..utils.custom_types import Triple
-from ..utils.sanitizer import sanitize_uri, build_sparql_triples
+from ..utils.sanitizer import sanitize_uri
 from ..config_dynamic import get_data_graph_uri
 
-from .crud import batch as chunker, insert_triples, delete_triples
+from .crud import batch as chunker, insert_triples
 from .traversal import expand_nodes
 from ..shacl_index import ShapeIndex
 
+PathExpr = Union[str, Tuple[str, Union[str, Tuple, None], Union[str, Tuple, None]]]
 # ---------------------------------------------------------------------------
 
 AffectedPair = Tuple[str, str]            # (nodeIRI, shapeIRI)
@@ -292,7 +292,11 @@ def build_reduced_graphs(affected_pairs: List[AffectedPair]) -> Tuple[str, List[
 
     while queue:
         batch_pairs = _collect_batch(queue, visited)
-        triples     = _fetch_filtered(batch_pairs, allowed_props_map)
+        triples = _fetch_triples(
+            nodes={n for n, _ in batch_pairs},
+            paths={p for pair in batch_pairs for p in allowed_props_map.get(pair, []) or []}
+        )
+
         inserted_triples.extend(triples)
         insert_triples(temp_graph, triples)
         inserted_total += len(triples)
@@ -334,64 +338,175 @@ def _collect_batch(queue: collections.deque, visited: Set[AffectedPair]) -> List
     return batch
 
 
-def _fetch_filtered(
-    batch: List[AffectedPair],
-    allowed_map: Dict[AffectedPair, Set[str] | None],
+def _iri_list(items: Set[str] | List[str]) -> str:
+    return " ".join(f"<{sanitize_uri(i)}>" for i in items if i.startswith("http"))
+
+
+def _parse_path_expr(expr: str) -> PathExpr:
+    expr = expr.strip()
+    if expr.startswith("^"):
+        return ("inv", expr[1:], None)
+    if "/" in expr:
+        parts = expr.split("/", 1)
+        return ("seq", _parse_path_expr(parts[0]), _parse_path_expr(parts[1]))
+    if "|" in expr:
+        parts = expr.split("|", 1)
+        return ("alt", _parse_path_expr(parts[0]), _parse_path_expr(parts[1]))
+    if expr.endswith("*"):
+        return ("star", _parse_path_expr(expr[:-1]), None)
+    if expr.endswith("+"):
+        return ("plus", _parse_path_expr(expr[:-1]), None)
+    return expr
+
+
+def _get_triples(sources: Set[str], predicate: str, graph_uri: str) -> Tuple[List[Triple], Set[str]]:
+    s_clause = _iri_list(sources)
+    q = f"""
+    SELECT ?s ?p ?o
+    WHERE {{
+      GRAPH <{graph_uri}> {{
+        VALUES ?s {{ {s_clause} }}
+        ?s <{sanitize_uri(predicate)}> ?o .
+      }}
+    }}"""
+    res = virtuoso.query_select(q)
+    triples, next_nodes = [], set()
+    for b in res["results"]["bindings"]:
+        s = b["s"]["value"]
+        p = b["p"]["value"]
+        o_val = b["o"]["value"]
+        o_typ = b["o"].get("type", "literal")
+        if o_typ == "uri":
+            obj = (o_val, "uri", None)
+            next_nodes.add(o_val)
+        elif o_val.startswith("_:"):
+            obj = (o_val, "bnode", None)
+        else:
+            obj = (o_val, "literal", None)
+        triples.append((s, p, obj))
+    return triples, next_nodes
+
+
+def _get_inverse_triples(targets: Set[str], predicate: str, graph_uri: str) -> Tuple[List[Triple], Set[str]]:
+    o_clause = _iri_list(targets)
+    q = f"""
+    SELECT ?s ?p ?o
+    WHERE {{
+      GRAPH <{graph_uri}> {{
+        VALUES ?o {{ {o_clause} }}
+        ?s <{sanitize_uri(predicate)}> ?o .
+      }}
+    }}"""
+    res = virtuoso.query_select(q)
+    triples, prev_nodes = [], set()
+    for b in res["results"]["bindings"]:
+        s = b["s"]["value"]
+        p = b["p"]["value"]
+        o_val = b["o"]["value"]
+        o_typ = b["o"].get("type", "literal")
+        if o_typ == "uri":
+            obj = (o_val, "uri", None)
+        elif o_val.startswith("_:"):
+            obj = (o_val, "bnode", None)
+        else:
+            obj = (o_val, "literal", None)
+        triples.append((s, p, obj))
+        prev_nodes.add(s)
+    return triples, prev_nodes
+
+
+def _traverse_path_expr(start_nodes: Set[str], path: PathExpr, graph_uri: str) -> List[Triple]:
+    if isinstance(path, str):
+        return _get_triples(start_nodes, path, graph_uri)[0]
+    kind, left, right = path
+    if kind == "inv":
+        return _get_inverse_triples(start_nodes, left, graph_uri)[0]
+    elif kind == "seq":
+        triples1, mid_nodes = _get_triples(start_nodes, left, graph_uri)
+        triples2 = _traverse_path_expr(mid_nodes, right, graph_uri)
+        return triples1 + triples2
+    elif kind == "alt":
+        return _traverse_path_expr(start_nodes, left, graph_uri) + _traverse_path_expr(start_nodes, right, graph_uri)
+    elif kind == "star" or kind == "plus":
+        seen = set(start_nodes)
+        worklist = set(start_nodes)
+        result = []
+        while worklist:
+            t, next_nodes = _get_triples(worklist, left, graph_uri)
+            result.extend(t)
+            new = next_nodes - seen
+            seen |= new
+            worklist = new
+        return result if kind == "plus" else result + []
+    return []
+
+
+def multi_hop_path_traversal(
+    start_nodes: Set[str],
+    path_exprs: List[str],
+    graph_uri: Optional[str] = None,
 ) -> List[Triple]:
-    """Fetch exactly the triples that the corresponding node-shapes may read."""
+    if not graph_uri:
+        graph_uri = get_data_graph_uri()
+    all_triples: List[Triple] = []
+    for expr in path_exprs:
+        parsed = _parse_path_expr(expr)
+        all_triples.extend(_traverse_path_expr(start_nodes, parsed, graph_uri))
+    return all_triples
 
-    if not batch:
+
+def _fetch_atomic_triples(
+    nodes: Set[str],
+    predicates: Set[str],
+    graph_uri: Optional[str] = None
+) -> List[Triple]:
+    if not nodes or not predicates:
         return []
-
-    node_values = _iri_list({n for n, _ in batch})
-
-    # union of allowed predicates for this batch ---------------------------
-    allowed_preds: Set[str] | None = {RDF_TYPE}
-    for pair in batch:
-        props = allowed_map[pair]
-        if props is None:                   # closed shape
-            allowed_preds = None
-            break
-        allowed_preds.update(props)
-
-    predicate_chunks = (
-        [None] if allowed_preds is None else
-        [list(c) for c in chunker(list(allowed_preds), PRED_BATCH_SIZE)]
-    )
-
+    if not graph_uri:
+        graph_uri = get_data_graph_uri()
+    s_clause = _iri_list(nodes)
+    p_clause = _iri_list(predicates)
+    q = f"""
+    SELECT ?s ?p ?o
+    WHERE {{
+      GRAPH <{graph_uri}> {{
+        VALUES ?s {{ {s_clause} }}
+        VALUES ?p {{ {p_clause} }}
+        ?s ?p ?o .
+      }}
+    }}"""
+    res = virtuoso.query_select(q)
     triples: List[Triple] = []
+    for b in res["results"]["bindings"]:
+        s = b["s"]["value"]
+        p = b["p"]["value"]
+        o_val = b["o"]["value"]
+        o_typ = b["o"].get("type", "literal")
+        if o_typ == "uri":
+            obj = (o_val, "uri", None)
+        elif o_val.startswith("_:"):
+            obj = (o_val, "bnode", None)
+        else:
+            obj = (o_val, "literal", None)
+        triples.append((s, p, obj))
+    return triples
 
-    for pred_chunk in predicate_chunks:
-        pred_clause = ""
-        if pred_chunk is not None:
-            pred_values = " ".join(f"<{p}>" for p in pred_chunk)
-            pred_clause = f"VALUES ?p {{ {pred_values} }}"
 
-        q = f"""
-        SELECT ?s ?p ?o
-        WHERE {{
-          GRAPH <{get_data_graph_uri()}> {{
-            VALUES ?s {{ {node_values} }}
-            {pred_clause}
-            ?s ?p ?o .
-          }}
-        }}"""
-
-        res = virtuoso.query_select(q)
-
-        for b in res["results"]["bindings"]:
-            s     = b["s"]["value"]
-            p     = b["p"]["value"]
-            o_val = b["o"]["value"]
-            o_typ = b["o"].get("type", "literal")
-
-            if o_typ == "uri":
-                obj = (o_val, "uri", None)
-            elif o_val.startswith("_:"):
-                obj = (o_val, "bnode", None)
-            else:
-                obj = (o_val, "literal", None)
-
-            triples.append((s, p, obj))
-
+def _fetch_triples(
+    nodes: Set[str],
+    paths: Set[str],
+    graph_uri: Optional[str] = None
+) -> List[Triple]:
+    atomic_preds = set()
+    path_exprs = []
+    for p in paths:
+        if any(x in p for x in ["/", "|", "^", "*", "+"]):
+            path_exprs.append(p)
+        else:
+            atomic_preds.add(p)
+    triples: List[Triple] = []
+    if atomic_preds:
+        triples += _fetch_atomic_triples(nodes, atomic_preds, graph_uri=graph_uri)
+    if path_exprs:
+        triples += multi_hop_path_traversal(nodes, path_exprs, graph_uri=graph_uri)
     return triples
