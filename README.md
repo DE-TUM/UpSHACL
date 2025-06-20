@@ -98,7 +98,7 @@ Parameters
 | `verbose`             | Enables detailed logs if `True`              |
 
 ### Run All Experiments (Windows only)
-
+Note: datasets are automatically downloaded if not already present in `/data` folder
 ```bash
 ./run_all_experiments
 ```
