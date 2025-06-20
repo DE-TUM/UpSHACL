@@ -1,7 +1,10 @@
 #!/bin/bash
 
-cd "$(dirname "$0")/.."
+echo "Downloading datasets"
 
+.venv/Scripts/python.exe get_datasets
+
+cd "$(dirname "$0")/.."
 echo "Starting experiments: $(date)"
 
 # Start 12 runners in parallel
