@@ -5,6 +5,6 @@ run_UpSHACL(
     shapes_file="data/my_shapes.ttl",
     insert_file="data/insert_batch.ttl",
     delete_file="data/delete_batch.ttl",
-    output_reduced_file="results/reduced_graph.ttl",
+    output_reduced_file="../results/reduced_graph.ttl",
     verbose=True
 )

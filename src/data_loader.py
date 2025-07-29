@@ -142,12 +142,13 @@ def export_graph_raw(graph_uri: str, out_path: str | os.PathLike, chunk: int = 5
     out_path = Path(out_path)
     offset = 0
     with out_path.open("wb") as fh:
+        prev_data = None
         while True:
             data = _stream_construct(graph_uri, offset, chunk)
-            # Virtuoso returns an empty body (just headers) when OFFSET > size
-            if not data or len(data) < 200:
+            if not data or data == prev_data:
                 break
             fh.write(data)
+            prev_data = data
             offset += chunk
             print(f"  wrote ~{offset:,} triples", end="\r")
     print(f"\n[EXPORT] complete -> {out_path}")

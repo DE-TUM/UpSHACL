@@ -2,6 +2,8 @@ import subprocess
 from SPARQLWrapper import SPARQLWrapper, JSON, N3, TURTLE, BASIC, POST
 import logging
 
+from rdflib import Graph
+
 logging.basicConfig(level=logging.INFO)
 
 class VirtuosoClient:
@@ -167,3 +169,17 @@ class VirtuosoClient:
             return result.stdout.strip() == "true"
         except subprocess.CalledProcessError:
             return False
+
+
+    def get_graph_as_rdflib(self, graph_uri: str) -> Graph:
+        """
+        Retrieve a full named graph from Virtuoso as an rdflib.Graph.
+        """
+        construct_query = f"""
+        CONSTRUCT {{ ?s ?p ?o }}
+        WHERE {{ GRAPH <{graph_uri}> {{ ?s ?p ?o }} }}
+        """
+        rdf_data = self.query_rdf(construct_query)
+        g = Graph()
+        g.parse(data=rdf_data.decode("utf-8"), format="turtle")
+        return g

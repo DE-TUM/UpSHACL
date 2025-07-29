@@ -1,0 +1,8 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.org/> .
+
+ex:zz rdf:type ex:Employee .
+ex:zz ex:worksFor ex:NewCompany .
+
+ex:a ex:worksFor ex:b .

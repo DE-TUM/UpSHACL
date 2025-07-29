@@ -6,10 +6,10 @@ from .store import VirtuosoClient
 # Virtuoso endpoints and auth
 VIRTUOSO_QUERY_ENDPOINT = "http://localhost:8890/sparql"
 VIRTUOSO_UPDATE_ENDPOINT = "http://localhost:8890/sparql"
-VIRTUOSO_USERNAME = ""
-VIRTUOSO_PASSWORD = ""
+VIRTUOSO_USERNAME = "dba"
+VIRTUOSO_PASSWORD = "dba"
 
-DOCKER_CONTAINER_NAME = "" # Add docker container name
+DOCKER_CONTAINER_NAME = "new_virtuoso" # Add docker container name
 DATA_DIR_IN_DOCKER = "/data"
 STORAGE_DIR = "" # Leave empty if storage should be within the project
 NODE_BATCH_SIZE   = 32  # was 1

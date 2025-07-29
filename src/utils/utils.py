@@ -1,7 +1,22 @@
-import os
-from rdflib import Graph, XSD, URIRef, BNode, Literal
+
+from rdflib import XSD
+from rdflib import URIRef, BNode, Literal
+from typing import Tuple, List
 from src.utils.custom_types import Triple
-from src.utils.sanitizer import normalize_triple
+
+def to_object(o) -> Tuple[str, str, str]:
+    if isinstance(o, URIRef):
+        return (str(o), "uri", None)
+    elif isinstance(o, BNode):
+        return (str(o), "bnode", None)
+    elif isinstance(o, Literal):
+        return (str(o), "literal", str(o.datatype) if o.datatype else None)
+    else:
+        raise ValueError(f"Unsupported RDF object type: {type(o)}")
+
+
+def to_internal_triples(triples) -> List[Triple]:
+    return [(str(s), str(p), to_object(o)) for s, p, o in triples]
 
 def make_validation_report_path(csv_file: str, batch_i: int, kind: str) -> str:
     """
