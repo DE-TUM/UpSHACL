@@ -1,0 +1,17 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.org/> .
+
+ex:h ex:worksFor ex:i .
+ex:h ex:email ex:j .
+ex:h rdf:type ex:Employee .
+ex:i rdf:type ex:k .
+
+ex:a ex:worksFor ex:c .
+ex:a ex:worksFor ex:b .
+ex:a rdf:type ex:Employee .
+ex:a ex:email ex:e .
+
+ex:d ex:worksFor ex:b .
+ex:d rdf:type ex:Employee .
+ex:c rdf:type ex:g .

@@ -1,0 +1,5 @@
+@prefix ns0:	<http://example.org/> .
+ns0:a	ns0:worksFor	ns0:c .
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+ns0:c	rdf:type	ns0:g ,
+		ns0:f .# Empty TURTLE

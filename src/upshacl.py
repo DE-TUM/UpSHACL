@@ -3,7 +3,10 @@ from rdflib import Graph
 
 from src.data_loader import load_data, delete_data, export_graph_raw
 from src.config_dynamic import set_graph_uris
-from src.graph_ops import compute_affected_pairs, build_reduced_graphs, insert_triples, delete_triples, cleanup_temp_graphs
+from src.graph_ops import (compute_affected_pairs, build_reduced_graphs, insert_triples,
+                           delete_triples, cleanup_temp_graphs)
+from src.shacl_index import ShapeIndex
+from src.utils.sanitizer import build_sparql_triples_nodes
 
 
 def run_UpSHACL(
@@ -44,8 +47,11 @@ def run_UpSHACL(
         g = Graph().parse(file_path, format="turtle")
         return list(g)
 
+    # inserted = to_internal_triples(load_triples(insert_file))
+    # deleted = to_internal_triples(load_triples(delete_file))
     inserted = load_triples(insert_file)
     deleted = load_triples(delete_file)
+
 
     # ───── Apply deltas to Virtuoso ─────
     if verbose:
@@ -56,14 +62,23 @@ def run_UpSHACL(
         print(f"Applying {len(inserted)} insertions...")
     insert_triples(data_uri, inserted)
 
+    # Load SHACL shapes file into rdflib graph
+    shapes_graph = Graph().parse(shapes_file, format="turtle")
+
+    # Override ShapeIndex to use rdflib instead of Virtuoso
+    ShapeIndex.override_with_graph(shapes_graph)
     # ───── Compute affected node-shape pairs ─────
     if verbose:
         print("Computing affected node-shape pairs...")
-    affected_pairs = compute_affected_pairs(inserted, deleted)
+    affected_pairs = compute_affected_pairs(
+                        build_sparql_triples_nodes(inserted),
+                        build_sparql_triples_nodes(deleted)
+                    )
 
     # ───── Build and export reduced graph ─────
     if verbose:
         print("Building reduced data graph...")
+
     G_red_uri, _ = build_reduced_graphs(affected_pairs)
 
     export_graph_raw(G_red_uri, output_reduced_file)

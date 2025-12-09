@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from rdflib import Node
+
 """Basic create/read/update/delete helpers that talk to Virtuoso.
 
 * **stateless** – no caching, no shapes‑graph knowledge
@@ -14,7 +16,7 @@ from src.config import (
     MAX_BATCH_SIZE,  # VALUES batch size for large SELECTs
 )
 from src.utils.custom_types import Triple
-from src.utils.sanitizer import build_sparql_triples
+from src.utils.sanitizer import build_sparql_triples, build_sparql_triples_nodes
 
 __all__ = [
     "batch",
@@ -124,13 +126,13 @@ INSERT DATA {{
 )
 
 
-def _chunked_update(template: str, graph_uri: str, triples: List[Triple], *, chunk: int = 500) -> None:
-    data = build_sparql_triples(triples)
+def _chunked_update(template: str, graph_uri: str, triples: List[(Node, Node, Node)], *, chunk: int = 500) -> None:
+    data = build_sparql_triples_nodes(triples)
     for part in batch(data, chunk):
         virtuoso.update(template.format(graph=graph_uri, triples=" ".join(part)))
 
 
-def insert_triples(graph_uri: str, triples: List[Triple]):
+def insert_triples(graph_uri: str, triples: List[(Node, Node, Node)]):
     if not triples:
         print("[crud] insert_triples - nothing to do")
         return

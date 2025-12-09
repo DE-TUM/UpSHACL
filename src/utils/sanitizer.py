@@ -79,6 +79,7 @@ def format_object(obj: tuple[str, str, str]) -> str:
     """
     Format an RDF object for SPARQL insertion using simplified types: 'uri', 'literal', 'bnode'.
     """
+
     value, obj_type, extra = obj
 
     if obj_type == "uri":
@@ -104,6 +105,31 @@ def format_object(obj: tuple[str, str, str]) -> str:
 
     else:
         raise ValueError(f"Unknown object type: {obj_type}")
+
+
+from rdflib.term import URIRef, BNode, Literal, Node
+
+def build_sparql_triples_nodes(triples: List[Tuple[Node, Node, Node]]) -> List[str]:
+    def format_node(n: Node) -> str:
+        if isinstance(n, URIRef):
+            return f"<{n}>"
+        elif isinstance(n, BNode):
+            return str(n)
+        elif isinstance(n, Literal):
+            escaped = str(n).replace('\\', '\\\\').replace('"', '\\"').replace('\n', '\\n')
+            if n.datatype:
+                return f"\"{escaped}\"^^<{n.datatype}>"
+            elif n.language:
+                return f"\"{escaped}\"@{n.language}"
+            else:
+                return f"\"{escaped}\""
+        else:
+            raise ValueError(f"Unsupported RDF node type: {type(n)}")
+
+    return [
+        f"{format_node(s)} {format_node(p)} {format_node(o)} ."
+        for s, p, o in triples
+    ]
 
 
 def build_sparql_triples(triples: List[Triple]) -> List[str]:

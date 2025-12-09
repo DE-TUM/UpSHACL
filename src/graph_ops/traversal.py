@@ -1,5 +1,10 @@
 from __future__ import annotations
 
+from rdflib import Node
+
+from ..utils.custom_types import PathExpr
+from ..utils.pathexpr_sparql_parser import path_expr_to_sparql
+
 """Graph‑traversal helpers that expand nodes / shapes.
 
 *No* shapes‑graph introspection happens here – we expect the caller to
@@ -39,39 +44,46 @@ def is_valid_uri(uri: str) -> bool:
 # Node expansion (↗ via sh:node‑defined properties)
 # ----------------------------------------------------------------
 
-def expand_nodes(initial_nodes: Set[str], properties: Set[str]) -> Set[str]:
+def expand_nodes(initial_nodes: Set[str], patterns: Set[str]) -> Set[str]:
     """
     Transitively expand *initial_nodes* over the given *properties*
-    (i.e. the predicates that occur with ``sh:node``).
+    (i.e. the PathExpr predicates that occur with ``sh:node``).
 
     Strategy
     --------
-      → fall back to the *old* batched BFS so we never hit
-        Virtuoso’s “transitive start not given” error.
+      → Uses batched BFS to avoid Virtuoso’s “transitive start not given” error.
+      → Accepts full path expressions (e.g. sequences, inverses).
     """
-    if not initial_nodes or not properties:
+    if not initial_nodes or not patterns:
         return set(initial_nodes)
 
-    expanded   = set(initial_nodes)
-    frontier   = set(initial_nodes)
-    props_in   = ", ".join(f"<{p}>" for p in properties)
+    print("INITIAL NODES:", initial_nodes)
+
+    expanded = set(initial_nodes)
+    frontier = set(initial_nodes)
 
     while frontier:
         next_frontier: Set[str] = set()
         batch = list(frontier)
+
         for i in range(0, len(batch), NODE_BATCH_SIZE):
-            node_slice  = batch[i : i + NODE_BATCH_SIZE]
+            node_slice = batch[i : i + NODE_BATCH_SIZE]
             node_values = " ".join(f"<{sanitize_uri(n)}>" for n in node_slice)
+
+            path_union = "\nUNION\n".join(
+                f"{{ {pattern} }}" for pattern in patterns
+            )
 
             q = f"""
             SELECT DISTINCT ?o
             WHERE {{
               GRAPH <{get_data_graph_uri()}> {{
                 VALUES ?s {{ {node_values} }}
-                ?s ?p ?o .
-                FILTER (?p IN ({props_in}))
+                {path_union}
               }}
-            }}"""
+            }}
+            """
+            print("EXPAND QUERY:\n", q)
             res = virtuoso.query_select(q)
             next_frontier.update(b["o"]["value"] for b in res["results"]["bindings"])
 

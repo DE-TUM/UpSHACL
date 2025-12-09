@@ -2,8 +2,8 @@
 
 **UpSHACL** is a SHACL-based validation pipeline designed for efficient constraint checking on evolving RDF graphs. Instead of validating the entire graph after each update, UpSHACL computes a targeted subgraph based on inserted and deleted triples, reducing validation overhead while preserving completeness.
 
-> 📝 **Paper**: *Submitted to ISWC 2025* (link to be added post-review)
-> 📄 **DOI**: *TBA*
+> 📝 **Paper**: [UpSHACL: Targeted Constraint Validation for Updates over Knowledge Graphs](https://dl.acm.org/doi/10.1007/978-3-032-09527-5_7)
+> 📄 **DOI**: 10.1007/978-3-032-09527-5_7
 
 ---
 
@@ -42,7 +42,7 @@ This repository implements **UpSHACL**, as described in our ISWC 2025 submission
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/anonymous/UpSHACL
+   git clone https://github.com/DE-TUM/UpSHACL
    cd UpSHACL
    ```
 
