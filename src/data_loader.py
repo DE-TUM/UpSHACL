@@ -107,18 +107,45 @@ def clean_and_bulk_load_ttl(file_path: str | os.PathLike, graph_uri: str):
     """Clear *graph_uri* and load *file_path* via Virtuoso's batch loader."""
 
     file_path = Path(file_path)
-    ttl_name = file_path.name
+    
+    # Get relative path to preserve subdirectory structure
+    # Assume files are relative to current working directory
+    if not file_path.is_absolute():
+        ttl_path = file_path
+    else:
+        try:
+            ttl_path = file_path.relative_to(Path.cwd())
+        except ValueError:
+            ttl_path = Path(file_path.name)
+    
+    # Convert to forward slashes for Docker/Unix paths
+    ttl_name = str(ttl_path).replace('\\', '/')
+    
+    # Strip leading 'data/' since the Docker volume is mounted at /data 
+    # (workspace/data -> /data in Docker)
+    if ttl_name.startswith('data/'):
+        ttl_name = ttl_name[5:]  # Remove 'data/' prefix
 
     print(f"[LOAD] clearing graph <{graph_uri}> …")
     _isql(f"SPARQL DROP SILENT GRAPH <{graph_uri}>;")
 
     print(f"[LOAD] cleaning stale load_list rows for {ttl_name} ...")
-    _isql(f"DELETE FROM DB.DBA.load_list WHERE ll_file LIKE '%{ttl_name}%';")
+    # Use just the filename for the LIKE pattern
+    _isql(f"DELETE FROM DB.DBA.load_list WHERE ll_file LIKE '%{Path(ttl_name).name}%';")
 
-    print(f"[LOAD] ld_dir + rdf_loader_run …")
+    # ld_dir expects: directory path, filename pattern, graph URI
+    # Split into directory and filename, using forward slashes
+    ttl_parts = ttl_name.split('/')
+    file_pattern = ttl_parts[-1]
+    ttl_dir = '/'.join(ttl_parts[:-1]) if len(ttl_parts) > 1 else ''
+    
+    # Build full path in Docker
+    docker_dir = f"{DATA_DIR_IN_DOCKER}/{ttl_dir}" if ttl_dir else DATA_DIR_IN_DOCKER
+    
+    print(f"[LOAD] ld_dir + rdf_loader_run … (dir: {docker_dir}, file: {file_pattern})")
     _isql(
         f"""
-        ld_dir('{DATA_DIR_IN_DOCKER}', '{ttl_name}', '{graph_uri}');
+        ld_dir('{docker_dir}', '{file_pattern}', '{graph_uri}');
         rdf_loader_run();
         """
     )
@@ -217,3 +244,4 @@ def load_data(data_file: str, shapes_file: str, data_graph_uri: str, shapes_grap
         print(f"  {g} ->  {count_triples_in_graph(g):,} triples")
 
     print("[LOAD] done.")
+

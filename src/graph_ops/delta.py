@@ -110,9 +110,6 @@ def make_path_query(
     target_var: str = "?o",
     depth: int = 3,
 ) -> str:
-    for path_node in path_nodes:
-        print(f"[DEBUG] path_node: {path_node}, type: {type(path_node)}")
-
     patterns = "\n".join(
         path_to_sparql_pattern(path_node, shapes_graph, source_var, target_var, depth)
         for path_node in path_nodes
@@ -160,7 +157,7 @@ def match_nodes_via_predicate(predicate_set: Set[str], var: str, check_nodes: Se
     found = {b[target[1:]]["value"] for b in bindings}
     return {(n, shape) for n in check_nodes if n in found and n in compare_nodes}
 
-def match_class_instances(classes: Set[str], nodes: Set[str], core_subjects: Set[str], shape: str) -> Set[AffectedPair]:
+def match_class_instances(classes: Set[str], nodes: Set[str], initial_nodes: Set[str], shape: str) -> Set[AffectedPair]:
     if not classes or not nodes:
         return set()
     matches = set()
@@ -182,20 +179,29 @@ def match_class_instances(classes: Set[str], nodes: Set[str], core_subjects: Set
             bindings = virtuoso.query_select(q)["results"]["bindings"]
             for b in bindings:
                 inst = b["inst"]["value"]
-                if inst in core_subjects:
+                if inst in initial_nodes:
                     matches.add((inst, shape))
     return matches
 
-def flatten_pairs(batch_pairs: List[AffectedPair], allowed_map: Dict[AffectedPair, Set[str] | None]) -> Tuple[Set[str], Set[str]]:
+def flatten_pairs(batch_pairs: List[AffectedPair], allowed_map: Dict[str, Set[str]]) -> Tuple[Set[str], Set[str]]:
+    """Extract nodes and patterns from affected pairs.
+    
+    Args:
+        batch_pairs: List of (node, shape) tuples
+        allowed_map: Dict mapping shape URI to set of SPARQL patterns
+    
+    Returns:
+        Tuple of (set of node URIs, set of SPARQL patterns)
+    """
     nodes = {n for n, _ in batch_pairs}
-    paths = {p for pair in batch_pairs for p in allowed_map.get(pair, []) or []}
-    return nodes, paths
+    patterns = {p for _, shape in batch_pairs for p in allowed_map.get(shape, set())}
+    return nodes, patterns
 
 def _match_shape(shape: str, targets: Dict[str, Set[str]], expanded_nodes: Set[str], core_subject_nodes: Set[str], initial_nodes: Set[str]) -> Set[AffectedPair]:
     matches: Set[AffectedPair] = set()
     shape_str = str(shape)
     matches |= {(n, shape_str) for n in expanded_nodes if n in targets["nodes"]}
-    matches |= match_class_instances(targets["classes"], expanded_nodes, core_subject_nodes, shape_str)
+    matches |= match_class_instances(targets["classes"], expanded_nodes, initial_nodes, shape_str)
     matches |= match_nodes_via_predicate(targets["subjectsOf"], "s", expanded_nodes, initial_nodes, shape_str)
     matches |= match_nodes_via_predicate(targets["objectsOf"], "o", expanded_nodes, initial_nodes, shape_str)
     return matches
@@ -240,6 +246,7 @@ def traverse_all(start_nodes: Set[str], patterns: Set[str], depth: int = 3) -> L
 
     all_triples = []
     nodes_clause = _iri_list(start_nodes)
+    data_graph = get_data_graph_uri()
 
     for pattern in patterns:
         query = f"""
@@ -247,8 +254,10 @@ def traverse_all(start_nodes: Set[str], patterns: Set[str], depth: int = 3) -> L
               {pattern}
             }}
             WHERE {{
-              VALUES ?s {{ {nodes_clause} }}
-              {pattern}
+              GRAPH <{data_graph}> {{
+                VALUES ?s {{ {nodes_clause} }}
+                {pattern}
+              }}
             }}
         """
         result = virtuoso.query(query)

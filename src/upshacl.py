@@ -2,12 +2,11 @@ import uuid
 from rdflib import Graph
 
 from src.data_loader import load_data, delete_data, export_graph_raw
-from src.config_dynamic import set_graph_uris, get_data_graph_uri
-from src.graph_ops import compute_affected_pairs, build_reduced_graphs, insert_triples, delete_triples, cleanup_temp_graphs
+from src.config_dynamic import set_graph_uris
+from src.graph_ops import (compute_affected_pairs, build_reduced_graphs, insert_triples,
+                           delete_triples, cleanup_temp_graphs)
 from src.shacl_index import ShapeIndex
-from src.store import virtuoso
-from src.utils.sanitizer import build_sparql_triples, build_sparql_triples_nodes
-from src.utils.utils import to_internal_triples
+from src.utils.sanitizer import build_sparql_triples_nodes
 
 
 def run_UpSHACL(

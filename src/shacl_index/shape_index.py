@@ -154,23 +154,31 @@ class ShapeIndex(metaclass=_LazySingleton):
         return {p for p in self.prop_to_parent_shapes.keys()}
 
     @cached_property
-    def shape_triple_patterns(self) -> Dict[Tuple[str, str], Set[str]]:
+    def shape_triple_patterns(self) -> Dict[str, Set[str]]:
+        """Return SPARQL triple patterns needed for each shape.
+        
+        Returns:
+            Dict mapping shape URI to set of SPARQL triple patterns.
+            Patterns include property paths and rdf:type for target classes.
+        """
         shape_to_paths = self.shape_paths
-        node_to_shapes = self.prop_to_parent_shapes
-        triple_map: Dict[Tuple[str, str], Set[str]] = {}
-        for path_node, shapes in node_to_shapes.items():
-            for shape in shapes:
-                if shape not in shape_to_paths:
-                    print(f"[SKIP] shape not in shape_to_paths: {shape}")
-                    continue
-                if path_node.n3() not in {p.n3() for p in shape_to_paths[shape]}:
-                    print(f"[SKIP] path_node not in shape_to_paths[{shape}]: {path_node}")
-                    continue
-                pattern = path_to_sparql_pattern(path_node, self.graph)
-
-                for node in self._target_nodes_for_shape(str(shape)):
-                    triple_map.setdefault((node, str(shape)), set()).add(pattern)
+        triple_map: Dict[str, Set[str]] = {}
+        
+        for shape, targets in self.target_map.items():
+            shape_str = str(shape)
+            patterns = set()
+            
+            # Add rdf:type patterns for target classes
+            for cls in targets.get('classes', set()):
+                patterns.add(f"?s <{RDF.type}> <{cls}> .")
+            
+            # Add property path patterns
+            if shape in shape_to_paths:
+                for path_node in shape_to_paths[shape]:
+                    pattern = path_to_sparql_pattern(path_node, self.graph)
+                    patterns.add(pattern)
+            
+            if patterns:
+                triple_map[shape_str] = patterns
+        
         return triple_map
-
-    def _target_nodes_for_shape(self, shape: str) -> Set[str]:
-        return self.target_map.get(URIRef(shape), {}).get("nodes", set())

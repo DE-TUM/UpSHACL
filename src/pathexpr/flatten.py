@@ -7,7 +7,7 @@ def fresh_var(counter: int) -> Tuple[str, int]:
     return f"?v{counter}", counter + 1
 
 
-def flatten_path(path: PathExpr, src: str, dst: str, depth: int = 1, counter: int = 0) -> Tuple[List[str], int]:
+def flatten_path(path: PathExpr, src: str, dst: str, depth: int = 10, counter: int = 0) -> Tuple[List[str], int]:
     triples = []
 
     if path.predicate:
